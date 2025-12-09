@@ -4,7 +4,7 @@
   html,
   body {
     font-family: var(--font-clash), "Inter", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -12,7 +12,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-clash), sans-serif;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 
@@ -40,7 +40,7 @@ body {
 .body-regular { font-size: 20px; }
 
 .btn-regular {
-  @apply md:flex justify-center items-center px-6 h-12 rounded-full gap-4 uppercase;
+  @apply  justify-center items-center px-6 h-12  rounded-full gap-4 uppercase;
   font-size: 18px;
   font-weight: 500;
   background-color: var(--west-bg-secondary);
@@ -95,6 +95,7 @@ body {
   bottom: -4px;
   left: 0;
   transition: width 0.3s ease-in-out;
+    background-color: #1F473E; 
 }
 
 .underline-slide:hover::after {
