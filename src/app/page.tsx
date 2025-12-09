@@ -1,4 +1,5 @@
 import Amenities from '@/components/Amenities'
+import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import OurStories from '@/components/OurStories'
@@ -13,6 +14,7 @@ const page = () => {
       <OurStories />
       <Amenities />
       <Solutions />
+      <Footer />
     </div>
   )
 }
