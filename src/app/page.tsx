@@ -4,6 +4,8 @@ import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import OurStories from '@/components/OurStories'
 import Solutions from '@/components/Solution'
+import ContactUs from '@/components/ContactUs'
+import Carousel from '@/components/Carousel'
 import React from 'react'
 
 const page = () => {
@@ -12,8 +14,10 @@ const page = () => {
       <Navbar />
       <Hero />
       <OurStories />
+      <Carousel />
       <Amenities />
       <Solutions />
+      <ContactUs />
       <Footer />
     </div>
   )
