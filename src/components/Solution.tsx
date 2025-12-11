@@ -17,11 +17,11 @@ const Solutions = () => {
         {solutionsList.map((item) => {
           const imgsrc = getImage(item.imgName);
           return (
-            <div key={item.id} className="group flex-1 transition-all duration-500 md:hover:flex-[1.6] min-w-[350px]">
-              <div className="relative overflow-hidden rounded-3xl h-80 md:h-[420px] transition-all duration-500">
+            <div key={item.id} className="group flex-1 transition-all duration-700 md:hover:flex-[1.6] min-w-[350px]">
+              <div className="relative overflow-hidden rounded-3xl h-80 md:h-[420px] transition-all duration-700">
                 <img
                   src={imgsrc}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
                   alt={item.title}
                   loading="lazy"
                 />
