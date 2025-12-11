@@ -1,20 +1,20 @@
-"use client";
-
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import CircleBtn from "@/ui-kit/CircleBtn";
 import NavigateButton from "@/ui-kit/NavigateButton";
-import { eventList, EventItem } from "@/constants/eventList";
+import { client } from "@/sanity/lib/sanity.client";
+import { allEventsQuery } from "@/sanity/lib/queries";
 
-const Events: React.FC = () => {
+export default async function Events() {
+  const events = await client.fetch(allEventsQuery);
+
   return (
     <div className="bg-(--west-bg) py-16">
       <div className="container flex flex-col">
         <div className="flex justify-between">
           <div className="space-y-8">
             <CircleBtn text="EVENTS" />
-            <h1 className="text-5xl md:text-6xl lg:text-7xl md:max-w-[550px] ">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl md:max-w-[550px]">
               Grow your network & ideas.
             </h1>
           </div>
@@ -26,34 +26,38 @@ const Events: React.FC = () => {
 
         {/* Event Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
-          {eventList.map((item: EventItem) => (
+          {events.slice(0, 3).map((item: any) => (
             <Link
-              key={item.id}
-              href={`/events/${item.id}`}
+              key={item._id}
+              href={`/events/${item.slug}`}
               className="group space-y-8 block"
             >
               <div className="relative overflow-hidden rounded-3xl md:h-[350px] transition-all group-hover:rounded-full">
                 <Image
-                  src={item.imgName}
+                  src={item.imageUrl}
                   alt={item.title}
                   width={600}
                   height={400}
-                  loading="lazy"
                   className="w-full h-full object-cover transition-all duration-400 ease-in-out group-hover:opacity-70"
                 />
 
                 <div className="absolute inset-0 bg-black/25 pointer-events-none" />
 
-                {/* Hover button */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <span className="opacity-0 scale-95 transition-all text-white duration-400 group-hover:opacity-100 group-hover:scale-100 inline-flex items-center gap-2 border-b-2 hover:border-current pointer-events-auto">
+                  <span className="opacity-0 scale-95 transition-all text-white duration-400 group-hover:opacity-100 group-hover:scale-100
+                   inline-flex items-center gap-2 border-b-2 hover:border-current pointer-events-auto">
                     VIEW EVENT <span className="text-xl">→</span>
                   </span>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <h1 className="text-gray-500">{item.d_and_b}</h1>
+                {/* <h1 className="text-gray-500">{item.d_and_b}</h1> */}
+                <div className="flex items-center gap-3 text-gray-500">
+                    <span>{item.date}</span>
+                    <span>|</span>
+                    <span>{item.time}</span>
+                </div>
                 <h1 className="text-3xl group-hover:underline">{item.title}</h1>
                 <h1 className="text-gray-500">{item.mail}</h1>
               </div>
@@ -61,13 +65,10 @@ const Events: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile button */}
         <div className="md:hidden mt-8">
           <NavigateButton text="VIEW ALL EVENTS" href="/events" />
         </div>
       </div>
     </div>
   );
-};
-
-export default Events;
+}
