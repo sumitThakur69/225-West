@@ -107,14 +107,13 @@ const Footer: React.FC = () => {
         {/* Logo / Big */}
         <div className="mb-10 lg:mb-14">
           <h1 className="text-6xl md:text-8xl lg:text-[11rem] text-center font-normal tracking-tight leading-none">
-            The Seed Hub
+            225 West
           </h1>
         </div>
 
         {/* Bottom */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8 border-t"
-          style={{ borderColor: "rgba(241, 236, 220, 0.12)" }}
+          className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8 border-t border-[rgba(241,236,220,0.12)]"
         >
           <div className="text-left sm:text-left opacity-80">
             <h1>Copyright © 2023 Slab! Design Studio</h1>
