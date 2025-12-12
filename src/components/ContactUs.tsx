@@ -55,7 +55,7 @@ const NewsletterForm: React.FC = () => {
   const isFormValid = formData.firstName && formData.lastName && formData.email && formData.message;
 
   return (
-    <section className="py-24 mb-16">
+    <section className="py-24  bg-(--west-bg-2)">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20">
           {/* Left Side */}

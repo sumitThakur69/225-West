@@ -18,7 +18,26 @@ export const singleEventQuery = `
     mail,
     date,
     time,
+    overviewTitle,
+    overviewDescription,
+    whatToExpect,
+    whoShouldAttend,
+    additionalDetails,
+    rsvp,
     "slug": slug.current,
     "imgName": image.asset->url
   }
 `;
+
+export const relatedEventsQuery = `
+  *[_type == "event" && slug.current != $slug][0...3]{
+    _id,
+    title,
+    "slug": slug.current,
+    "imageUrl": image.asset->url,
+    date,
+    time,
+    mail
+  }
+`;
+

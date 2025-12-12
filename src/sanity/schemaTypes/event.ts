@@ -55,17 +55,23 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
 
-    // SHORT INTRO
-    defineField({
-      name: "overview",
-      title: "Overview",
-      type: "text",
-      rows: 4,
-      description: "Short intro paragraph under the title",
-      validation: (Rule) => Rule.required(),
-    }),
+      defineField({
+        name: "overviewTitle",
+        title: "Overview Title",
+        type: "string",
+        description: "The big bold sentence above the paragraph",
+        validation: (Rule) => Rule.required(),
+      }),
 
-    // WHAT TO EXPECT — bullet points
+      defineField({
+        name: "overviewDescription",
+        title: "Overview Description",
+        type: "text",
+        rows: 5,
+        description: "Small paragraph under the overview title",
+        validation: (Rule) => Rule.required(),
+      }),
+
     defineField({
       name: "whatToExpect",
       title: "What to Expect",
