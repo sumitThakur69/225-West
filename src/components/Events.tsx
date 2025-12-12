@@ -6,7 +6,7 @@ import { client } from "@/sanity/lib/sanity.client";
 import { allEventsQuery } from "@/sanity/lib/queries";
 
 export default async function Events() {
-  const events = await client.fetch(allEventsQuery);
+const events = await client.fetch(allEventsQuery);
 
   return (
     <div className="bg-(--west-bg) py-16">

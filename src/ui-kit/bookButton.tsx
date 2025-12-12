@@ -13,10 +13,10 @@ const BookButton: React.FC<BookButtonProps> = ({ text, href, className }) => {
   return (
     <Link
       href={href}
-      className={`btn-regular ${className}`}
+      className={`btn-regular group ${className}`}
     >
       <p className="mt-[0.5]">{text}</p > 
-      <BsArrowRight className="text-(--west-bg) text-2xl" />
+      <BsArrowRight className="text-(--west-bg) text-xl transition-transform duration-300 group-hover:translate-x-1 " />
     </Link>
   );
 };

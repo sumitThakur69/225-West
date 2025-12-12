@@ -19,6 +19,7 @@
 :root {
   --west-bg: #F1ECDC;
   --west-bg-secondary: #1F473E;
+  --west-bg-2:rgba(223, 222, 205, 1);
   --max-width: 1440px;
   --padding-mobile: 16px;
   --padding-tablet: 24px;
@@ -46,6 +47,7 @@ body {
   background-color: var(--west-bg-secondary);
   color: var(--west-bg);
 }
+
 
 .container {
   width: 100%;
