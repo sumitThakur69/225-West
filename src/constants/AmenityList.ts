@@ -1,4 +1,3 @@
-// Type for Amenity items
 export interface AmenityItem {
   id: number;
   title: string;
@@ -6,7 +5,6 @@ export interface AmenityItem {
   color: string;
 }
 
-// Function to get icon path from public folder
 export const getIcon = (name: string): string => {
   return `/assets/icons/${name}.svg`;
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import CircleBtn from "@/ui-kit/CircleBtn";
 import { AmenityList , getIcon } from "../constants/AmenityList";
 
