@@ -15,7 +15,6 @@ const NavigateButton = ({ text, href }: NavigateButtonProps) => {
         inline-flex items-center gap-2 
         transition-all duration-200
         border-b-0 underline-slide
-       
       "
     >
       {text}

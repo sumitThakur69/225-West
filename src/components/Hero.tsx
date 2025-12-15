@@ -8,7 +8,7 @@ const Hero = () => {
       </div>
 
         <div className="relative w-full h-[650px] overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/assets/posters/Hero.png')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('/assets/posters/Hero.png')] bg-cover bg-top"></div>
         <div className="absolute inset-0 bg-bottom-overlay"></div>
         </div>
 

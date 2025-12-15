@@ -11,12 +11,12 @@ interface ResponsiveMenuProps {
 
 const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [play, setPlay] = useState(false);
+  // const [play, setPlay] = useState(false);
 
-  const handlePlay = () => {
-    setPlay(true);
-    videoRef.current?.play();
-  };
+  // const handlePlay = () => {
+  //   setPlay(true);
+  //   videoRef.current?.play();
+  // };
 
   const menuLinks = ["Our Story", "Gallery", "Events", "Contact"];
   const socialIcons = [FaFacebook, FaTwitter, FaInstagram, FaLinkedin];
@@ -33,32 +33,22 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
       <div className="w-1/2 relative max-md:hidden">
         <button
           onClick={() => setOpen(false)}
-          className="flex absolute items-center top-6 left-6 z-50 gap-2 uppercase cursor-pointer text-(--west-bg) tracking-wider"
+          className="flex absolute items-center top-6 left-6 z-50 gap-1 uppercase cursor-pointer text-black tracking-wider"
         >
           <span className="text-sm md:text-base font-medium">Close</span>
-          <MdClose className="text-4xl" />
+          <MdClose className="text-3xl" />
         </button>
 
         <video
           ref={videoRef}
-          src="/menu-vid.mp4"
+          src="/videos/menu-vid.mp4"
           poster="/assets/posters/poster.png"
           loop
           muted
+          autoPlay
+          playsInline
           className="w-full h-full object-cover"
         />
-
-        {!play && (
-          <div
-            onClick={handlePlay}
-            className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer"
-          >
-            <div className="w-20 h-20 rounded-full border border-white flex items-center justify-center">
-              <span className="text-white text-4xl">▶</span>
-            </div>
-            <p className="text-white text-lg mt-2 tracking-widest">PLAY VIDEO</p>
-          </div>
-        )}
       </div>
 
       {/* RIGHT SIDE  */}
@@ -72,10 +62,10 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
 
           <button
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2 uppercase cursor-pointer md:hidden"
+            className="flex items-center uppercase cursor-pointer md:hidden"
           >
             <span className="text-sm font-medium">Close</span>
-            <MdClose className="text-3xl" />
+            <MdClose className="text-2xl" />
           </button>
 
           <BookButton className="hidden md:flex py-2" text="Book a tour" href="/book-tour" />

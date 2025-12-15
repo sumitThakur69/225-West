@@ -38,7 +38,7 @@ const events = await client.fetch(allEventsQuery);
                   alt={item.title}
                   width={600}
                   height={400}
-                  className="w-full h-full object-cover transition-all duration-400 ease-in-out group-hover:opacity-70"
+                  className="w-full h-full object-cover shadow-2xl transition-all duration-400 ease-in-out group-hover:opacity-70"
                 />
 
                 <div className="absolute inset-0 bg-black/25 pointer-events-none" />
