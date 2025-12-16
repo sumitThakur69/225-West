@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import BackgroundLogo from "./BackgroundLogo";
 
 interface SocialIcon {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -35,9 +36,10 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer
-      className="w-full"
-      style={{ backgroundColor: "var(--west-bg-secondary)", color: "var(--west-bg)" }}
+    <BackgroundLogo  className="w-full bg-(--west-bg-secondary) text-(--west-bg)"
+    position="left"
+    size="50"
+    logo="/brand/Logo_Footer.svg"
     >
       <div className="container py-10 md:py-14 lg:py-18">
         {/* Top Section */}
@@ -135,7 +137,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </BackgroundLogo>
   );
 };
 

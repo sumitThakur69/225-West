@@ -171,3 +171,13 @@ body {
   background: #c9c9c9;
   border-radius: 4px;
 }
+
+/* Hide scrollbar ONLY for horizontal carousels */
+.no-scrollbar {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  height: 0;                    /* horizontal only */
+}

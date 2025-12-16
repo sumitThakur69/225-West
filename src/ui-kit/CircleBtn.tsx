@@ -7,7 +7,7 @@ const CircleBtn = ({ text }: {text : string}) => {
       rounded-2xl h-8 px-6 uppercase tracking-wide text-[16px]  
       text-[--west-bg-secondary] leading-none"
     >
-      {text}
+      <h1>{text}</h1>
     </div>
   );
 };
