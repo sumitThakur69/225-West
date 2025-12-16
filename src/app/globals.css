@@ -41,8 +41,8 @@ body {
 .body-regular { font-size: 20px; }
 
 .btn-regular {
-  @apply  justify-center items-center px-6 h-12  rounded-full gap-4 uppercase;
-  font-size: 18px;
+  @apply  justify-center items-center px-6 h-10  rounded-full gap-4 uppercase;
+  font-size: 16px;
   font-weight: 500;
   background-color: var(--west-bg-secondary);
   color: var(--west-bg);

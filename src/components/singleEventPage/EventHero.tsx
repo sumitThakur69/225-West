@@ -19,7 +19,6 @@ const EventHero: React.FC<EventDetailProps> = ({ event }) => {
       { icon: FaInstagram, link: "https://instagram.com/" },
     ];
 
-
   return (
     <div className="bg-[--west-bg] py-12">
       <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

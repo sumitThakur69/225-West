@@ -37,8 +37,6 @@ const events = await client.fetch(allEventsQuery);
                   src={item.imageUrl}
                   alt={item.title}
                   fill
-                  // width={600}
-                  // height={600}
                   className="w-full h-full object-cover shadow-2xl transition-all duration-400 ease-in-out group-hover:opacity-70"
                 />
 

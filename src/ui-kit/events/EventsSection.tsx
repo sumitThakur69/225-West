@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavigateButton from "@/ui-kit/NavigateButton";
-import { Event } from "@/types/event";
 
 interface EventsSectionProps {
   title: string;             
@@ -40,9 +39,8 @@ export default function EventsSection({
             <Link
               key={item._id}
               href={`/events/${item.slug}`}
-              className="group space-y-8 block"
-            >
-              <div className="relative overflow-hidden rounded-3xl aspect-square transition-all group-hover:rounded-full">
+              className="group space-y-8 block">
+              <div className="relative overflow-hidden rounded-4xl aspect-square transition-all group-hover:rounded-full">
                 {item.imageUrl ? (
                   <Image
                     src={item.imageUrl}

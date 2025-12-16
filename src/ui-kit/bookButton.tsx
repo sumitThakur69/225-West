@@ -15,7 +15,7 @@ const BookButton: React.FC<BookButtonProps> = ({ text, href, className }) => {
       href={href}
       className={`btn-regular group ${className}`}
     >
-      <p className="mt-[0.5]">{text}</p > 
+      <h1 className="leading-none tracking-wide">{text}</h1 > 
       <BsArrowRight className="text-(--west-bg) text-xl transition-transform duration-300 group-hover:translate-x-1 " />
     </Link>
   );

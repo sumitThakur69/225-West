@@ -41,3 +41,16 @@ export const relatedEventsQuery = `
   }
 `;
 
+export const pastEventsQuery = `
+  *[_type == "event" && date < now()]
+  | order(date desc)[0...6] {
+    _id,
+    title,
+    date,
+    time,
+    mail,
+    "slug": slug.current,
+    "imageUrl": image.asset->url
+  }
+`;
+
