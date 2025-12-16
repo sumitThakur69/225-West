@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { FaPlay , FaPause } from "react-icons/fa";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -50,11 +51,19 @@ const Hero = () => {
             aria-label={isPlaying ? "Pause video" : "Play video"}
             className="absolute inset-0 flex items-end justify-end mr-8 mb-8"
           >
-            <div className="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center">
-              <span className="text-white text-2xl mt-0.5 ml-0.5 text-center">
-                {isPlaying ? "❚❚" : "▶"}
-              </span>
-            </div>
+          <div className="
+            flex items-center justify-center
+            rounded-full border-2 border-white
+            w-12 h-12
+            sm:w-14 sm:h-14
+            md:w-16 md:h-16
+          ">
+            {isPlaying ? (
+                <FaPause className="text-white text-lg sm:text-xl md:text-2xl" />
+              ) : (
+                <FaPlay className="text-white text-lg sm:text-xl md:text-2xl ml-1" />
+              )}
+          </div>
           </button>
         </div>
       </div>

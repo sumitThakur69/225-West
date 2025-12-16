@@ -17,7 +17,7 @@ const BackgroundLogo = ({
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <div
-        className="absolute inset-0 pointer-events-none opacity-20"
+        className="absolute inset-0 pointer-events-none opacity-10"
         style={{
                 WebkitMaskImage: `url('${logo}')`,
                 maskImage: `url('${logo}')`,
