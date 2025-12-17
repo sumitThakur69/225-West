@@ -12,7 +12,7 @@ const page = () => {
         <div className="mt-16 md:relative min-h-[260px] md:min-h-[300px] lg:min-h-[380px]">
 
           <h1
-            className=" text-5xl md:text-6xl lg:text-8xl max-w-[900px] tracking-tight
+            className="text-5xl md:text-6xl lg:text-8xl max-w-[900px] tracking-tight
               md:absolute md:top-0 md:left-0">
             Flexible workspace solutions to fuel your growth.
           </h1>

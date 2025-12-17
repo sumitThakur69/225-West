@@ -1,20 +1,15 @@
 import { WorkAmenityList, getAmenityIcon } from "@/constants/workAmenity";
+import CircleBtn from "@/ui-kit/CircleBtn";
+import BackgroundLogo from "../BackgroundLogo";
 
 const WorkAmenities = () => {
   return (
-    <div className="bg-(--west-bg-secondary) py-18">
+    <BackgroundLogo className="bg-(--west-bg-secondary) py-18 text-(--west-bg)">
       <div className="container flex flex-col gap-16">
         <div className="space-y-8">
-          <div
-            className="inline-flex items-center justify-center
-            border border-(--west-bg-2)
-            rounded-2xl h-8 px-6 uppercase tracking-wide
-            text-[16px] text-(--west-bg) leading-none"
-          >
-            Hot Desk Amenities
-          </div>
+          <CircleBtn text="hot Desk amenity" />
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl md:max-w-[900px] text-(--west-bg)">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl md:max-w-[900px]">
             Our flexible and collaborative workspaces
           </h1>
         </div>
@@ -47,7 +42,7 @@ const WorkAmenities = () => {
           ))}
         </div>
       </div>
-    </div>
+    </BackgroundLogo>
   );
 };
 

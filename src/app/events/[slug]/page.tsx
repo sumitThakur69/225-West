@@ -2,8 +2,8 @@ import { getEvent } from "@/sanity/lib/getEvents";
 import { client } from "@/sanity/lib/sanity.client";
 import { relatedEventsQuery } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
-import EventHeader from "@/components/eventPage/EventHeader";
-import EventHero from "@/components/eventPage/EventHero";
+import EventHeader from "@/components/singleEventPage/EventHeader";
+import EventHero from "@/components/singleEventPage/EventHero";
 import EventsSection from "@/ui-kit/events/EventsSection";
 
 interface PageProps {

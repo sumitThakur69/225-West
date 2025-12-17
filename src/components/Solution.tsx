@@ -2,11 +2,12 @@ import React from "react";
 import Link from "next/link";
 import CircleBtn from "@/ui-kit/CircleBtn";
 import { solutionsList , getImage } from "../constants/solutionList";
+import BackgroundLogo from "./BackgroundLogo";
 
 const Solutions = () => {
 
   return (
-    <div className="py-16 bg-(--west-bg-secondary)">
+    <BackgroundLogo className="py-16 bg-(--west-bg-secondary)">
       <div className="container flex max-md:flex-col text-(--west-bg) items-start py-12 gap-8 lg:gap-28 ">
         <CircleBtn text="SOLUTIONS" />
         <h1 className="text-5xl md:text-6xl lg:text-7xl md:max-w-[650px] lg:ml-28 leading-tight md:leading-[1.1]">
@@ -57,7 +58,7 @@ const Solutions = () => {
           );
         })}
       </div>
-    </div>
+    </BackgroundLogo>
   );
 };
 

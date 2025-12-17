@@ -90,8 +90,6 @@ const Carousel: React.FC = () => {
         ))}
         
       </div>
-
-      {/* Navigation Buttons */}
       <div className="container flex items-start justify-between">
         <div className="flex gap-4">
           <CarouselButton onClick={handlePrev} direction="prev" />

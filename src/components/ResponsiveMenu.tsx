@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { MdClose } from "react-icons/md";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { LuLeaf } from "react-icons/lu";
 import BookButton from "@/ui-kit/bookButton";
+import Link from "next/link";
 
 interface ResponsiveMenuProps {
   open: boolean;
@@ -11,14 +12,14 @@ interface ResponsiveMenuProps {
 
 const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  // const [play, setPlay] = useState(false);
 
-  // const handlePlay = () => {
-  //   setPlay(true);
-  //   videoRef.current?.play();
-  // };
+ const menuLinks = [
+  { label: "Our Story", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Events", href: "/events" },
+  { label: "Contact", href: "/contact" },
+];
 
-  const menuLinks = ["Our Story", "Gallery", "Events", "Contact"];
   const socialIcons = [FaFacebook, FaTwitter, FaInstagram, FaLinkedin];
   const locations = ["TSH Kraton", "TSH Tambakboyo", "TSH Godean", "TSH Bantul"];
   const solutions = ["Hot Desks", "Dedicated Desks", "Private Offices", "Virtual Offices"];
@@ -74,13 +75,15 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
         {/* MENU LINKS */}
         <div className="flex justify-between items-start w-full">
           <nav className="mt-8 space-y-2">
-            {menuLinks.map((link) => (
-              <p
-                key={link}
-                className="text-5xl lg:text-6xl font-medium cursor-pointer underline-slide underline-slide-thick"
+            {menuLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={()=>setOpen(false)}
+                className="block text-5xl lg:text-6xl font-medium cursor-pointer underline-slide underline-slide-thick"
               >
-                {link}
-              </p>
+                {item.label}
+              </Link>
             ))}
           </nav>
 

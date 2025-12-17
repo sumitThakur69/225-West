@@ -41,8 +41,8 @@ body {
 .body-regular { font-size: 20px; }
 
 .btn-regular {
-  @apply  justify-center items-center px-6 h-12  rounded-full gap-4 uppercase;
-  font-size: 18px;
+  @apply  justify-center items-center px-6 h-10  rounded-full gap-4 uppercase;
+  font-size: 16px;
   font-weight: 500;
   background-color: var(--west-bg-secondary);
   color: var(--west-bg);
@@ -170,4 +170,14 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #c9c9c9;
   border-radius: 4px;
+}
+
+/* Hide scrollbar ONLY for horizontal carousels */
+.no-scrollbar {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  height: 0;                    /* horizontal only */
 }
