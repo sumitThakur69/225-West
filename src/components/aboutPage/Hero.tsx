@@ -55,12 +55,7 @@ const Hero = () => {
             className="absolute inset-0 flex items-end justify-end mr-8 mb-8"
           >
           <div className="
-            flex items-center justify-center
-            rounded-full border-2 border-white
-            w-12 h-12
-            sm:w-14 sm:h-14
-            md:w-16 md:h-16
-          ">
+            flex items-center justify-center rounded-full border-2 border-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
             {isPlaying ? (
                 <FaPause className="text-white text-lg sm:text-xl md:text-2xl" />
               ) : (

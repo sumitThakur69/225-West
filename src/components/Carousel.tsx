@@ -85,8 +85,8 @@ const Carousel: React.FC = () => {
 
     const styles: Record<number, string> = {
       0: `${base} left-1/2 -translate-x-1/2 scale-100 z-30 w-[260px] h-[440px] lg:w-[370px] lg:h-[640px]`,
-      [-1]: `${base} left-[12%] scale-90 z-20 w-[220px] h-[360px] lg:w-[320px] lg:h-[540px]`,
-      [1]: `${base} right-[12%] scale-90 z-20 w-[220px] h-[360px] lg:w-[320px] lg:h-[540px]`,
+      [-1]: `${base} left-[17%] sm:left-[12%] scale-90 z-20 w-[220px] h-[360px] lg:w-[320px] lg:h-[540px]`,
+      [1]: `${base} right-[17%] sm:right-[12%] scale-90 z-20 w-[220px] h-[360px] lg:w-[320px] lg:h-[540px]`,
       [-2]: `${base} left-[-6%] scale-75 z-10 w-[180px] h-[320px] lg:w-[260px] lg:h-[460px]`,
       [2]: `${base} right-[-6%] scale-75 z-10 w-[180px] h-[320px] lg:w-[260px] lg:h-[460px]`,
     };

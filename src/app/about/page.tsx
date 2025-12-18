@@ -11,8 +11,7 @@ const page = () => {
             <h1>
                 How The Seed Hub grew your dream workspace.
             </h1>
-            <h2 className='text-5xl md:text-6xl lg:text-8xl max-w-[900px] tracking-tight
-                          md:top-0 md:left-0'>
+            <h2 className='text-5xl md:text-6xl lg:text-8xl max-w-[900px] tracking-tight md:top-0 md:left-0'>
                 Designed for efficiency, built for collaboration
             </h2>
         </div>
