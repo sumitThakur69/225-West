@@ -28,9 +28,9 @@ export default function RootLayout({
       <body
         className={`${clashDisplay.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <header><Navbar /></header>
+        <main id="main-content">{children}</main>
+        <footer><Footer /></footer>
       </body>
     </html>
   );

@@ -41,8 +41,7 @@ const videoRef = useRef<HTMLVideoElement>(null);
         {/* video section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-end mt-16">
         
-        <div className="relative w-full h-[480px] md:aspect-4/5 md:max-w-[600px] rounded-3xl  overflow-hidden bg-[#DEDACD]
-  ">
+        <div className="relative w-full h-[500px] md:aspect-4/5 md:max-w-[600px] rounded-3xl  overflow-hidden bg-[#DEDACD]">
             <video
             ref={videoRef}
             src="/videos/about2-vid.mp4"

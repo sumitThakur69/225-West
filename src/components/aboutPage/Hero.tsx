@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaPlay , FaPause } from "react-icons/fa";
+import { smoothScroll } from "@/utlis/smoothScroll";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -29,7 +30,9 @@ const Hero = () => {
             From a spark of inspiration to a network of vibrant hubs, explore how The Seed Hub's story can inspire yours.
           </h1>
 
-          <button className="flex md:justify-center items-end text-md cursor-pointer">
+          <button 
+          onClick={()=>smoothScroll("stories",1000,30)}
+          className="flex md:justify-center items-end text-md cursor-pointer">
             EXPLORE
             <MdKeyboardArrowDown className="w-5 h-5 text-(--west-bg-secondary) animate-bounce" />
           </button>

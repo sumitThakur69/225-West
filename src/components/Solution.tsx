@@ -31,13 +31,11 @@ const Solutions = () => {
               </div>
 
           <div className="mt-6 relative space-y-3">
-  
               <div className="flex items-center justify-between">
-                <h3 className="text-2xl md:text-3xl text-white font-light">{item.title}</h3>
+                <h2 className="text-2xl md:text-3xl text-white font-light">{item.title}</h2>
                 <button
                   className="bg-white/90 hover:bg-white text-teal-900 rounded-full w-16 h-10 flex items-center justify-center
-                  md:absolute md:right-0 md:top-0 md:opacity-0 md:transition-all md:duration-500 md:group-hover:opacity-100 md:group-hover:-translate-y-2"
-                >
+                  md:absolute md:right-0 md:top-0 md:opacity-0 md:transition-all md:duration-500 md:group-hover:opacity-100 md:group-hover:-translate-y-2">
                   <span className="text-[30px]">→</span>
                 </button>
               </div>

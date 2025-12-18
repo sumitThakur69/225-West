@@ -1,7 +1,7 @@
-import { getUpcomingEvents , getFeaturedEvent , getPastEvents , getEvents } from "@/sanity/lib/getEvents" 
+import { getUpcomingEvents , getFeaturedEvent , getEvents } from "@/sanity/lib/getEvents" 
 import MainEventsClient from "@/components/eventPage/MainEvents";
 import { Event } from "@/types/event";
-import EventsSection from "@/ui-kit/events/EventsSection";
+import PastEventsSection from "@/components/eventPage/PastEvents";
 
 interface PageProps {
   searchParams: Promise<{
@@ -16,20 +16,17 @@ export default async function Page({ searchParams }: PageProps) {
   const search = resolvedSearchParams.q ?? null; 
 
  // If search is active, fetch all events; otherwise fetch upcoming only
-  const [featuredEvent, events, pastEvents]: [
+  const [featuredEvent, events]: [
     Event | null,
-    Event[],
     Event[]
   ] = search 
     ? await Promise.all([
         null, // No featured event during search
         getEvents(eventType, search), // Get ALL events
-        getPastEvents(),
       ])
     : await Promise.all([
         getFeaturedEvent(eventType, search),
         getUpcomingEvents(eventType, search),
-        getPastEvents(),
       ]);
 
   return (
@@ -46,12 +43,7 @@ export default async function Page({ searchParams }: PageProps) {
       />
 
       <section id="past-events">
-      <EventsSection
-        title="Past Events"
-        events={pastEvents}  
-        background="var(--west-bg-2)"
-        className="py-16"
-      />
+        <PastEventsSection />
       </section>
     </div>
   )

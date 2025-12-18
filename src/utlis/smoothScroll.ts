@@ -1,10 +1,9 @@
-// src/utils/smoothScroll.ts
-
 type ScrollTarget = "top" | string;
 
 export function smoothScroll(
   target: ScrollTarget,
-  duration: number = 1000
+  duration: number = 1000,
+  offset: number = 0 // 👈 ADD OFFSET
 ) {
   const startY = window.scrollY;
 
@@ -14,7 +13,7 @@ export function smoothScroll(
       : (() => {
           const el = document.getElementById(target);
           return el
-            ? el.getBoundingClientRect().top + window.scrollY
+            ? el.getBoundingClientRect().top + window.scrollY - offset
             : startY;
         })();
 
