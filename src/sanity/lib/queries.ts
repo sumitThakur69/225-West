@@ -72,7 +72,7 @@ export const upcomingEventsQuery = `
     && ($eventType == null || eventType == $eventType)
     && ($search == null || title match $search + "*")
   ] 
-  | order(date asc)[1...$end] {
+  | order(date asc)[1...$limit] {
     _id,
     title,
     mail,
@@ -86,7 +86,7 @@ export const upcomingEventsQuery = `
 
 export const pastEventsQuery = `
   *[_type == "event" && date < now()]
-  | order(date desc)[0...6] {
+  | order(date desc)[0...$limit] {
     _id,
     title,
     date,

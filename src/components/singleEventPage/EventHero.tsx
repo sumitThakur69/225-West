@@ -2,6 +2,7 @@ import React from "react";
 import { Event } from "@/types/event";
 import { FaFacebook, FaTwitter, FaInstagram , FaLinkedin} from "react-icons/fa";
 import BookButton from "@/ui-kit/bookButton"; 
+import ShareButtons from "./ShareButton";
 
 interface EventDetailProps {
   event: Event;
@@ -15,39 +16,53 @@ interface SocialIcon {
 }
 
 const EventHero: React.FC<EventDetailProps> = ({ event }) => {
-  const shareLinks : SocialIcon[] = [
-    {
-      name: "Facebook",
-      icon: FaFacebook,
-      getShareUrl: (url) => {
-        // Facebook Share Dialog
-        return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-      },
-      color: "#1877F2"
-    },
-    {
-      name: "Twitter",
-      icon: FaTwitter,
-      getShareUrl: (url, title) => {
-        // Twitter/X Intent
-        const text = `${title} - Check out this event!`;
-        return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
-      },
-      color: "#1DA1F2"
-    },
-    {
-      name: "Instagram",
-      icon: FaInstagram,
-      getShareUrl: (url) => {
-        if (typeof navigator !== 'undefined' && navigator.clipboard) {
-          navigator.clipboard.writeText(url);
-          alert('Link copied! You can now paste it in your Instagram story or post.');
-        }
-        return '#';
-      },
-      color: "#E4405F"
-    }
-    ];
+// const shareLinks: SocialIcon[] = [
+//   {
+//     name: "Facebook",
+//     icon: FaFacebook,
+//     getShareUrl: (url) =>
+//       `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+//     color: "#1877F2",
+//   },
+//   {
+//     name: "Twitter",
+//     icon: FaTwitter,
+//     getShareUrl: (url, title) =>
+//       `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+//     color: "#1DA1F2",
+//   },
+//   {
+//     name: "Instagram",
+//     icon: FaInstagram,
+//     getShareUrl: () => "#",
+//     color: "#E4405F",
+//   },
+// ];
+
+const getCurrentUrl = () => {
+  if (typeof window === "undefined") return "";
+  return window.location.href;
+};
+
+const handleShare = (item: SocialIcon) => {
+  const url = getCurrentUrl();
+
+  if (item.name === "Instagram") {
+    navigator.clipboard.writeText(url);
+    alert("Link copied. Paste it on Instagram.");
+    window.open("https://www.instagram.com/", "_blank");
+    return;
+  }
+
+  const shareUrl = item.getShareUrl(
+    url,
+    event.overviewTitle,
+    event.overviewDescription
+  );
+
+  window.open(shareUrl, "_blank", "noopener,noreferrer");
+};
+
 
   return (
     <div className="bg-[--west-bg] py-12">
@@ -62,17 +77,24 @@ const EventHero: React.FC<EventDetailProps> = ({ event }) => {
           </h1>
 
           {/* Share */}
-          <div className="flex flex-col items-start justify-between gap-3 sm:gap-4 max-md:hidden">
+          {/* <div className="flex flex-col items-start justify-between gap-3 sm:gap-4 max-md:hidden">
             <div className="text-sm sm:text-base text-(--west-bg-secondary) font-light">Share on</div>
                 <div className="flex flex-row space-x-4">
                     {shareLinks.map((item:SocialIcon , i:number)=> (
-                        <a key={i} href="{item.link}" target="_blank" rel="noopener noreferrer">
-                            <div className="icon-circle icon-circle-dark">
-                                <item.icon className="text-2xl" />
-                            </div>
-                        </a>
+                        <button key={i} 
+                        onClick={()=>handleShare(item)}>
+                        className="icon-circle icon-circle-dark"
+                        aria-label={`Share on ${item.name}`}
+                        <item.icon className="text-2xl" />    
+                        </button>
                     ))}
                 </div>
+          </div> */}
+          <div className="max-md:hidden">
+            <ShareButtons
+                title={event.overviewTitle}
+                description={event.overviewDescription}
+            />
           </div>
         </div>
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 import { SolutionItem, getImage } from '@/constants/solutionList'
 
 interface SolutionDetailProps {
@@ -15,22 +16,19 @@ const WorkCards: React.FC<SolutionDetailProps> = ({ solution }) => {
         ">
           
           <div className="w-full flex justify-start">
-            <div className="    rounded-3xl w-full
-                                h-[420px] md:h-[520px] lg:h-[580px]
-                                lg:max-w-[500px]
-                                overflow-hidden">
-              <img
+            <div className="relative rounded-3xl w-full h-[420px] md:h-[520px] lg:h-[580px] lg:max-w-[500px] overflow-hidden">
+              <Image
                 src={getImage(solution.imgName)}
                 alt={solution.title}
-                className="w-full h-full object-cover shadow-4xl"
+                fill
+                priority
+                sizes="(min-width: 1024px) 500px, 100vw"
+                className="object-cover shadow-4xl"
               />
             </div>
           </div>
-
           <div 
-            className="space-y-4 flex flex-col text-left lg:items-start mt-6
-            "
-          >
+            className="space-y-4 flex flex-col text-left lg:items-start mt-6">
             {/* Title + Description */}
             <div className="max-w-[550px]">
               <h1 className="text-4xl md:text-5xl  font-light text-(--west-bg-secondary) mb-4 text-left">
@@ -54,9 +52,7 @@ const WorkCards: React.FC<SolutionDetailProps> = ({ solution }) => {
                 </li>
               ))}
             </ul>
-
           </div>
-
         </div>
       </div>
     </div>

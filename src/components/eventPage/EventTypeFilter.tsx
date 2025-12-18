@@ -74,7 +74,7 @@ export default function EventTypeFilter({
         </div>
 
         <button
-          onClick={() => smoothScroll("past-events", 1000)}
+          onClick={() => smoothScroll("past-events", 1000 , 30)}
           className="bg-(--west-bg-secondary) text-(--west-bg) rounded-3xl px-6 py-3 text-sm hover:bg-gray-800 transition-colors"
         >
           SHOW PAST EVENTS

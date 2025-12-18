@@ -39,7 +39,7 @@ const events = await getEvents(null , null)
                   className="w-full h-full object-cover shadow-2xl transition-all duration-400 ease-in-out group-hover:opacity-70"
                 />
 
-                <div className="absolute inset-0 bg-black/25 pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent pointer-events-none" />
 
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <span className="opacity-0 scale-95 transition-all text-white duration-400 group-hover:opacity-100 group-hover:scale-100

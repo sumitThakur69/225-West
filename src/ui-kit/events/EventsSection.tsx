@@ -7,7 +7,10 @@ interface EventsSectionProps {
   events: any[];              
   href?: string;              
   background?: string;    
-  className : string;    
+  className : string;  
+  showLoadMore?: boolean;
+  onLoadMore?: () => void;
+  isLoading?: boolean;  
 }
 
 export default function EventsSection({
@@ -15,7 +18,10 @@ export default function EventsSection({
   events,
   href,
   background ,
-  className
+  className,
+  showLoadMore = false,
+  onLoadMore,
+  isLoading = false
 }: EventsSectionProps) {
 
   return (
@@ -78,7 +84,17 @@ export default function EventsSection({
             </Link>
           ))}
         </div>
-
+        {showLoadMore && onLoadMore && (
+          <div className="mt-12 text-center">
+            <button 
+              onClick={onLoadMore}
+              disabled={isLoading}
+              className="px-8 py-3 border-2 border-(--west-bg-secondary) rounded-4xl hover:bg-(--west-bg-secondary) hover:text-(--west-bg) transition-colors disabled:opacity-50"
+            >
+              {isLoading ? "Loading..." : "LOAD MORE"}
+            </button>
+          </div>
+        )}
         {href && (
           <div className="md:hidden mt-8">
             <NavigateButton text="VIEW ALL EVENTS" href={href} />

@@ -11,7 +11,7 @@ const BackgroundLogo = ({
   children,
   className = "",
   position = "right top",
-  size = "50",
+  size = "",
   logo = "/brand/Logo.svg"
 }: BackgroundLogoProps) => {
   return (

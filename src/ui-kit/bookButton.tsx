@@ -12,7 +12,7 @@ interface BookButtonProps {
 const BookButton: React.FC<BookButtonProps> = ({ text, href, className }) => {
   return (
     <Link
-      href={href}
+      href='/#contact'
       className={`btn-regular group ${className}`}
     >
       <h1 className="leading-none tracking-wide">{text}</h1 > 

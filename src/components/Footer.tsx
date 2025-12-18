@@ -7,6 +7,7 @@ import BackToTopButton from "@/components/common/BackToTopButton"
 interface SocialIcon {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   link: string;
+  label:string;
 }
 
 const Footer: React.FC = () => {
@@ -31,11 +32,12 @@ const Footer: React.FC = () => {
   const seedHub: string[] = ["OUR STORY", "GALLERY", "CONTACT US", "EVENTS"];
 
   const socialIcons: SocialIcon[] = [
-    { icon: FaFacebook, link: "https://facebook.com/" },
-    { icon: FaTwitter, link: "https://twitter.com/" },
-    { icon: FaInstagram, link: "https://instagram.com/" },
-    { icon: FaLinkedin, link: "https://linkedin.com/" },
+    { icon: FaFacebook, link: "https://facebook.com/", label: "Facebook" },
+    { icon: FaTwitter, link: "https://twitter.com/", label: "Twitter" },
+    { icon: FaInstagram, link: "https://instagram.com/", label: "Instagram" },
+    { icon: FaLinkedin, link: "https://linkedin.com/", label: "LinkedIn" },
   ];
+
 
   return (
     <BackgroundLogo  className="w-full bg-(--west-bg-secondary) text-(--west-bg)"
@@ -54,9 +56,9 @@ const Footer: React.FC = () => {
             </h1>
             <div className="flex flex-row space-x-4">
               {socialIcons.map((item, i) => (
-                <a key={i} href={item.link} target="_blank" rel="noopener noreferrer">
+                <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
                   <div className="icon-circle icon-circle-light">
-                    <item.icon className="text-2xl" />
+                    <item.icon className="text-2xl" aria-hidden="true" />
                   </div>
                 </a>
               ))}

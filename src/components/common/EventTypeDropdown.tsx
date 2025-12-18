@@ -26,10 +26,14 @@ export default function EventTypeDropdown({
   label,
   showLabel = false,
 }: EventTypeDropdownProps) {
+
+  const triggerId = "event-type-select";
   return (
     <div className="w-full">
       {showLabel && label && (
-        <label className="block text-sm font-medium text-(--west-bg-secondary)/60 mb-2">
+        <label 
+        htmlFor={triggerId}
+        className="block text-sm font-medium text-(--west-bg-secondary)/60 mb-2">
           {label}
         </label>
       )}
