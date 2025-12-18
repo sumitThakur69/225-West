@@ -45,15 +45,25 @@ const NewsletterForm: React.FC = () => {
     }));
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLButtonElement>): Promise<void> => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage('');
+const handleSubmit = async (e: FormEvent<HTMLButtonElement>): Promise<void> => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitMessage('');
 
-    // API call 
-    setTimeout(() => {
-      setSubmitMessage('Thanks for your message!');
-      setIsSubmitting(false);
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      setSubmitMessage(result.message || 'Thanks for your message!');
+      
       setFormData({
         firstName: '',
         lastName: '',
@@ -62,8 +72,19 @@ const NewsletterForm: React.FC = () => {
         eventType: '',
         subscribed: false
       });
-    }, 1000);
-  };
+
+      // Hide success message after 5 seconds
+      setTimeout(() => setSubmitMessage(''), 5000);
+    } else {
+      setSubmitMessage(result.message || 'Something went wrong. Please try again.');
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    setSubmitMessage('Failed to send message. Please try again or contact us directly.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const isFormValid = formData.firstName && formData.lastName && formData.email && formData.message;
 
