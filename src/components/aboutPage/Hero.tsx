@@ -22,7 +22,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container pt-8">
       <div className="space-y-6">
         <div className="flex max-md:flex-col justify-between max-md:space-y-6">
           <h1 className="text-(--west-bg-secondary)/80 max-w-[500px]">

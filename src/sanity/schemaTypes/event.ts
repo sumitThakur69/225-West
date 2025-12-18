@@ -22,6 +22,23 @@ export default defineType({
       },
     }),
 
+     defineField({
+      name: "eventType",
+      title: "Event Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Networking", value: "networking" },
+          { title: "Festival", value: "festival" },
+          { title: "Stand-up Comedy", value: "standup" },
+          { title: "Creative & Art", value: "creative" },
+          { title: "Workshop & Seminar", value: "workshop" },
+        ],
+        layout: "dropdown",
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+
     // Images
     defineField({
       name: "image",

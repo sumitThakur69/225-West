@@ -1,6 +1,8 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import BackgroundLogo from "./BackgroundLogo";
+import { smoothScroll } from "@/utlis/smoothScroll";
+import BackToTopButton from "@/components/common/BackToTopButton"
 
 interface SocialIcon {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -117,17 +119,16 @@ const Footer: React.FC = () => {
         <div
           className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8 border-t border-[rgba(241,236,220,0.12)]"
         >
-          <div className="text-left sm:text-left opacity-80">
+          <div 
+          className="text-center sm:text-left opacity-80 max-sm:order-3">
             <h1>Copyright © 2023 Slab! Design Studio</h1>
           </div>
 
           <div className="flex justify-center">
-            <a href="#" className="text-sm underline-slide underline-white">
-              <h1>BACK TO TOP</h1>
-            </a>
+            <BackToTopButton />
           </div>
 
-          <div className="flex justify-end gap-6 text-sm">
+          <div className="flex justify-center md:justify-end gap-6 text-sm">
             <a href="#" className="underline-slide underline-white">
               <h1>TERMS</h1>
             </a>

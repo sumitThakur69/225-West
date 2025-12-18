@@ -5,8 +5,8 @@ export interface Event {
   date: string;
   time: string;
   slug: string;
-  imgName: string;
-
+  imageUrl: string;
+  eventType: string;
   overviewTitle: string;
   overviewDescription: string;
   whatToExpect: string[];

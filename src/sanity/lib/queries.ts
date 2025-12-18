@@ -1,5 +1,8 @@
 export const allEventsQuery = `
-  *[_type == "event"] | order(_createdAt desc) {
+  *[_type == "event"
+    && ($eventType == null || eventType == $eventType)
+    && ($search == null || lower(title) match lower($search) + "*")
+  ] | order(_createdAt desc) {
     _id,
     title,
     mail,
@@ -25,7 +28,7 @@ export const singleEventQuery = `
     additionalDetails,
     rsvp,
     "slug": slug.current,
-    "imgName": image.asset->url
+    "imageUrl": image.asset->url
   }
 `;
 
@@ -38,6 +41,46 @@ export const relatedEventsQuery = `
     date,
     time,
     mail
+  }
+`;
+
+// FIRST upcoming event 
+export const featuredEventQuery = `
+  *[_type == "event" 
+    && date >= now()
+    && ($eventType == null || eventType == $eventType)
+    && ($search == null || title match $search + "*")
+  ] 
+  | order(date asc)[0] {
+    _id,
+    title,
+    mail,
+    date,
+    time,
+    eventType,
+    overviewTitle,
+    overviewDescription,
+    "slug": slug.current,
+    "imageUrl": image.asset->url
+  }
+`;
+
+// remaining upcoming events (skip the first one)
+export const upcomingEventsQuery = `
+  *[_type == "event" 
+    && date >= now()
+    && ($eventType == null || eventType == $eventType)
+    && ($search == null || title match $search + "*")
+  ] 
+  | order(date asc)[1...$end] {
+    _id,
+    title,
+    mail,
+    date,
+    time,
+    eventType,
+    "slug": slug.current,
+    "imageUrl": image.asset->url
   }
 `;
 

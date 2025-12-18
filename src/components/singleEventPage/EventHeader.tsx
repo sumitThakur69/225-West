@@ -30,10 +30,11 @@ const EventHeader: React.FC<EventDetailProps> = ({ event }) => {
           <div className="w-full flex justify-start md:justify-end order-2">
             <div className="relative w-full md:max-w-lg aspect-square">
               <Image
-                src={event.imgName}
+                src={event.imageUrl}
                 alt="event_images"
                 width={700}
                 height={600}
+                priority
                 className="rounded-2xl sm:rounded-3xl object-cover w-full h-full shadow-xl transition-all duration-700 hover:scale-105 sm:shadow-2xl"
               />
             </div>

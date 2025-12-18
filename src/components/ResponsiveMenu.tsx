@@ -17,7 +17,7 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
   { label: "Our Story", href: "/about" },
   { label: "Gallery", href: "/gallery" },
   { label: "Events", href: "/events" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
   const socialIcons = [FaFacebook, FaTwitter, FaInstagram, FaLinkedin];

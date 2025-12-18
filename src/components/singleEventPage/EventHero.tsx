@@ -1,6 +1,6 @@
 import React from "react";
 import { Event } from "@/types/event";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram , FaLinkedin} from "react-icons/fa";
 import BookButton from "@/ui-kit/bookButton"; 
 
 interface EventDetailProps {
@@ -8,15 +8,45 @@ interface EventDetailProps {
 }
 
 interface SocialIcon {
+  name: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  link: string;
+  getShareUrl: (url: string, title: string, description: string) => string;
+  color: string;
 }
 
 const EventHero: React.FC<EventDetailProps> = ({ event }) => {
   const shareLinks : SocialIcon[] = [
-      { icon: FaFacebook, link: "https://facebook.com/" },
-      { icon: FaTwitter, link: "https://twitter.com/" },
-      { icon: FaInstagram, link: "https://instagram.com/" },
+    {
+      name: "Facebook",
+      icon: FaFacebook,
+      getShareUrl: (url) => {
+        // Facebook Share Dialog
+        return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      },
+      color: "#1877F2"
+    },
+    {
+      name: "Twitter",
+      icon: FaTwitter,
+      getShareUrl: (url, title) => {
+        // Twitter/X Intent
+        const text = `${title} - Check out this event!`;
+        return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+      },
+      color: "#1DA1F2"
+    },
+    {
+      name: "Instagram",
+      icon: FaInstagram,
+      getShareUrl: (url) => {
+        if (typeof navigator !== 'undefined' && navigator.clipboard) {
+          navigator.clipboard.writeText(url);
+          alert('Link copied! You can now paste it in your Instagram story or post.');
+        }
+        return '#';
+      },
+      color: "#E4405F"
+    }
     ];
 
   return (

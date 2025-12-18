@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { MdMenu } from "react-icons/md";
 import { LuLeaf } from "react-icons/lu"; 
 import ResponsiveMenu from "./ResponsiveMenu";
@@ -10,11 +11,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 10);
-  };
-
   useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -27,6 +25,8 @@ const Navbar = () => {
         }`}
       >
         <div className="container py-2 flex justify-between items-center">
+
+          {/* Menu */}
           <div className="flex items-center gap-3 cursor-pointer max-md:order-2">
             <div
               onClick={() => setOpen(!open)}
@@ -37,15 +37,24 @@ const Navbar = () => {
             <p className="uppercase max-md:hidden">Menu</p>
           </div>
 
-          <div className="flex md:items-center text-left md:ml-17 gap-3 text-3xl">
+          {/* LOGO → HOME */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-3xl cursor-pointer select-none"
+          >
             <LuLeaf />
             <p>225 West</p>
-          </div>
+          </Link>
 
-          <BookButton className="hidden md:flex" text="Book a tour" href="/book-tour" />
+          <BookButton
+            className="hidden md:flex"
+            text="Book a tour"
+            href="/book-tour"
+          />
         </div>
       </nav>
-      {open ? <ResponsiveMenu open={open} setOpen={setOpen} /> : null}
+
+      {open && <ResponsiveMenu open={open} setOpen={setOpen} />}
     </>
   );
 };

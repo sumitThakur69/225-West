@@ -6,7 +6,8 @@ interface EventsSectionProps {
   title: string;             
   events: any[];              
   href?: string;              
-  background?: string;        
+  background?: string;    
+  className : string;    
 }
 
 export default function EventsSection({
@@ -14,10 +15,11 @@ export default function EventsSection({
   events,
   href,
   background ,
+  className
 }: EventsSectionProps) {
 
   return (
-    <div style={{ backgroundColor: background }} className="py-20">
+    <div style={{ backgroundColor: background }} className={`${className}`}>
       <div className="container flex flex-col">
 
         <div className="flex justify-between">
@@ -46,6 +48,8 @@ export default function EventsSection({
                     src={item.imageUrl}
                     alt={item.title}
                     fill
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="w-full h-full object-cover transition-all duration-400 ease-in-out group-hover:opacity-70"
                   />
                 ) : (

@@ -17,7 +17,7 @@ const OurStories = () => {
       we provide the space, community, and resources you need to thrive.
     </h2>
 
-    <NavigateButton text="Explore Full Story" href="/stories" />
+    <NavigateButton text="Explore Full Story" href="/about" />
   </div>
 </section>
 

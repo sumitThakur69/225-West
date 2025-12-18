@@ -6,9 +6,9 @@ import ContactUs from '@/components/ContactUs'
 
 const page = () => {
   return (
-    <><div className='py-16 container'>
+    <><div className='pt-16 container'>
         <div className='mt-8 md:mt-12 space-y-2'>
-            <h1 className=''>
+            <h1>
                 How The Seed Hub grew your dream workspace.
             </h1>
             <h2 className='text-5xl md:text-6xl lg:text-8xl max-w-[900px] tracking-tight
