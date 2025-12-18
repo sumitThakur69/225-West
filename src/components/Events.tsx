@@ -2,11 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import CircleBtn from "@/ui-kit/CircleBtn";
 import NavigateButton from "@/ui-kit/NavigateButton";
-import { client } from "@/sanity/lib/sanity.client";
-import { allEventsQuery } from "@/sanity/lib/queries";
+import { getEvents } from "@/sanity/lib/getEvents";
 
 export default async function Events() {
-const events = await client.fetch(allEventsQuery);
+const events = await getEvents(null , null)
 
   return (
     <div className="bg-(--west-bg) py-16">

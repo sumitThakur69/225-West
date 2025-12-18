@@ -2,11 +2,14 @@
 
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import CircleBtn from '@/ui-kit/CircleBtn';
+import EventTypeDropdown from './common/EventTypeDropdown';
+import { EVENT_MESSAGES } from '@/constants/eventTypes';
 
 interface FormData {
   firstName: string;
   lastName: string;
   email: string;
+  eventType: string;
   message: string;
   subscribed: boolean;
 }
@@ -17,6 +20,7 @@ const NewsletterForm: React.FC = () => {
     lastName: '',
     email: '',
     message: '',
+    eventType: '',
     subscribed: false
   });
 
@@ -30,6 +34,14 @@ const NewsletterForm: React.FC = () => {
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleEventTypeChange = (value: string): void => {
+    setFormData(prev => ({
+      ...prev,
+      eventType: value,
+      message: value ? EVENT_MESSAGES[value] ?? "" : "",
     }));
   };
 
@@ -47,6 +59,7 @@ const NewsletterForm: React.FC = () => {
         lastName: '',
         email: '',
         message: '',
+        eventType: '',
         subscribed: false
       });
     }, 1000);
@@ -55,7 +68,7 @@ const NewsletterForm: React.FC = () => {
   const isFormValid = formData.firstName && formData.lastName && formData.email && formData.message;
 
   return (
-    <section className="py-24  bg-(--west-bg-2)">
+    <section id='contact' className="py-24  bg-(--west-bg-2)">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20">
           {/* Left Side */}
@@ -127,6 +140,14 @@ const NewsletterForm: React.FC = () => {
                 className="form-input"
               />
             </div>
+
+            <EventTypeDropdown 
+              value={formData.eventType}
+              onChange={handleEventTypeChange}
+              disabled={isSubmitting}
+              label="Event type of interest *"
+              showLabel={true}
+            />
 
             {/* message */}
             <div>

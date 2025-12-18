@@ -29,6 +29,7 @@ export default async function EventDetailPage({ params }: PageProps) {
   events={relatedEvents}
   background="var(--west-bg-2)"
   href="/events"
+  className="py-16"
   />
   </>)
 }
