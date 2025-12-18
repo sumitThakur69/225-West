@@ -21,17 +21,10 @@ const WorkAmenities = () => {
               <img
                 src={getAmenityIcon(item.iconName)}
                 alt={item.title}
-                className="w-12 h-12
-                transition-transform duration-300 ease-out
-                hover:-translate-y-1
-                hover:scale-110"
+                className="w-12 h-12 transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-110"
               />
 
-              <h1 className="text-lg sm:text-xl md:text-2xl
-                            text-(--west-bg)
-                            wrap-break-words
-                            leading-snug
-                            max-w-full">
+              <h1 className="text-lg sm:text-xl md:text-2xl text-(--west-bg) wrap-break-words leading-snug max-w-full">
                 {item.title}
               </h1>
 

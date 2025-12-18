@@ -3,6 +3,8 @@
 import React, { useState, useRef } from "react";
 import { carouselImages, CarouselImage } from "../constants/carouselImages";
 import NavigateButton from "@/ui-kit/NavigateButton";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { HiOutlineArrowSmallLeft , HiOutlineArrowSmallRight } from "react-icons/hi2";
 
 interface CarouselButtonProps {
   onClick: () => void;
@@ -15,7 +17,11 @@ const CarouselButton: React.FC<CarouselButtonProps> = ({ onClick, direction }) =
     className="inline-flex items-center justify-center w-13 h-10 md:w-16 md:h-12 rounded-full border border-black hover:bg-white/20 transition"
     aria-label={direction === "prev" ? "Previous" : "Next"}
   >
-    <span className="text-2xl">{direction === "prev" ? "←" : "→"}</span>
+    {direction === "prev" ? (
+      <HiOutlineArrowSmallLeft className="text-2xl md:text-3xl leading-none" />
+    ) : (
+      <HiOutlineArrowSmallRight className="text-2xl md:text-3xl leading-none" />
+    )}
   </button>
 );
 
