@@ -4,7 +4,7 @@ import React from 'react'
 const page = () => {
   return (
     <div className='py-16'>
-      <Hero />
+      Gallery
     </div>
   )
 }

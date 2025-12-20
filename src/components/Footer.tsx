@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
 
           <div className="group text-(--west-bg)/80">
             <div className="flex items-start">
-              {/* Icon wrapper */}
+      
               <span className="flex items-end justify-center w-5 h-5 shrink-0">
                 <MdOutlineShareLocation className="w-4 h-4" />
               </span>
@@ -138,20 +138,16 @@ const Footer: React.FC = () => {
                 Jaipur, Rajasthan 302019, India
               </h2>
             </div>
-
-            <a
-              href="https://maps.app.goo.gl/AZCXxEaSebUj2i3i6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-block text-sm font-medium underline underline-offset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3>See location →</h3>
-            </a>
+                <a href="https://maps.app.goo.gl/AZCXxEaSebUj2i3i6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block text-sm font-medium underline-slide underline-offset-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                  <h3>See location →</h3>
+                </a>
           </div>
         </div>
-        <div
-          className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8 border-t border-[rgba(241,236,220,0.12)]">
-          <div 
-          className="text-center sm:text-left opacity-80 max-sm:order-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8 border-t border-[rgba(241,236,220,0.12)]">
+          <div className="text-center sm:text-left opacity-80 max-sm:order-3">
             <h1>225_West@gmail.com</h1>
           </div>
 

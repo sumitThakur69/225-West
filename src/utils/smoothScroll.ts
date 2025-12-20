@@ -1,37 +1,26 @@
-type ScrollTarget = "top" | string;
-
 export function smoothScroll(
-  target: ScrollTarget,
-  duration: number = 1000,
-  offset: number = 0 
+  target: string | "top",
+  duration = 500,
+  offset = 0
 ) {
-  const startY = window.scrollY;
-
-  const endY =
+  const start = window.pageYOffset;
+  const end =
     target === "top"
       ? 0
-      : (() => {
-          const el = document.getElementById(target);
-          return el
-            ? el.getBoundingClientRect().top + window.scrollY - offset
-            : startY;
-        })();
+      : document.getElementById(target)?.getBoundingClientRect().top! +
+        window.pageYOffset -
+        offset;
 
-  const distance = endY - startY;
   const startTime = performance.now();
 
-  const easeInOut = (t: number) =>
-    t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-
-  const animate = (currentTime: number) => {
-    const elapsed = currentTime - startTime;
+  function animate(time: number) {
+    const elapsed = time - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    const eased = easeInOut(progress);
 
-    window.scrollTo(0, startY + distance * eased);
+    window.scrollTo(0, start + (end - start) * progress);
 
     if (progress < 1) requestAnimationFrame(animate);
-  };
+  }
 
   requestAnimationFrame(animate);
 }
