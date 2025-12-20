@@ -1,8 +1,10 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import BackgroundLogo from "./BackgroundLogo";
-import { smoothScroll } from "@/utlis/smoothScroll";
+import Link from "next/link";
+import { slugify } from "@/utils/slugify";
 import BackToTopButton from "@/components/common/BackToTopButton"
+import { MdOutlineShareLocation } from "react-icons/md";
 
 interface SocialIcon {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -21,15 +23,20 @@ const Footer: React.FC = () => {
   ];
 
   const solutions: string[] = [
-    "HOT DESKS",
-    "DEDICATED DESKS",
-    "PRIVATE OFFICES",
-    "VIRTUAL OFFICES",
-    "DAY PASSES",
-    "ENTERPRISE SOLUTIONS",
+    "Hot Desks",
+    "Dedicated Desks",
+    "Private Offices",
+    "Virtual Offices",
+    "Day Passes",
+    "Enterprice Solutions",
   ];
 
-  const seedHub: string[] = ["OUR STORY", "GALLERY", "CONTACT US", "EVENTS"];
+  const west = [
+  { label: "Our Story", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Events", href: "/events" },
+  { label: "Contact", href: "/#contact" },
+];
 
   const socialIcons: SocialIcon[] = [
     { icon: FaFacebook, link: "https://facebook.com/", label: "Facebook" },
@@ -65,44 +72,48 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Location / Solutions / The Seed Hub */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 py-8">
-            <div>
+          {/*  Solutions / The Seed Hub */}
+          <div className="flex flex-col md:flex-row gap-6 md:gap-16 py-8">
+            {/* <div className="tracking-wider">
               <h1 className="underline-slide opacity-60 text-lg mb-4 tracking-wide">
                 LOCATION
               </h1>
               <ul className="space-y-3">
                 {locations.map((location, index) => (
                   <li key={index}>
-                    <a href="#" className="underline-slide underline-white">
+                    <span  className="underline-slide underline-white cursor-pointer">
                       {location}
-                    </a>
+                    </span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
-            <div>
-              <h1 className="text-lg mb-4 opacity-60 tracking-wide">SOLUTIONS</h1>
+            <div className="tracking-wider">
+              <h1 className="text-lg mb-4 opacity-60">SOLUTIONS</h1>
               <ul className="space-y-3">
                 {solutions.map((solution, index) => (
                   <li key={index}>
-                    <a href="#" className="underline-slide underline-white">
-                      {solution}
-                    </a>
+                  <Link
+                    href={`/workspaces#${slugify(solution)}`}
+                    className="underline-slide underline-white">
+                    {solution}
+                  </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="w-fit">
-              <h1 className="mb-4 tracking-wide opacity-60">THE SEED HUB</h1>
+            <div className="w-fit  tracking-wider">
+              <h1 className="mb-4  opacity-60">225 West</h1>
               <ul className="space-y-3">
-                {seedHub.map((item, index) => (
+                {west.map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="underline-slide underline-white">
-                      {item}
-                    </a>
+                    <Link 
+                      href={item.href} 
+                      className="underline-slide underline-white">
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -110,20 +121,38 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Logo / Big */}
-        <div className="mb-10 lg:mb-14">
-          <h1 className="text-6xl md:text-8xl lg:text-[11rem] text-center font-normal tracking-tight leading-none">
+        <div className="mb-10 lg:mb-14 flex flex-col items-center space-y-4 text-center">
+          <h1 className="text-6xl md:text-8xl lg:text-[11rem] font-normal tracking-tight leading-none">
             225 West
           </h1>
-        </div>
 
-        {/* Bottom */}
+          <div className="group text-(--west-bg)/80">
+            <div className="flex items-start">
+              {/* Icon wrapper */}
+              <span className="flex items-end justify-center w-5 h-5 shrink-0">
+                <MdOutlineShareLocation className="w-4 h-4" />
+              </span>
+
+              <h2 className="m-0 text-sm md:text-md leading-relaxed max-w-[550px]">
+                225, Vardhman Nagar-A Patrakar Colony, Gopalpura Bypass, near 200 Feet Bypass,
+                Jaipur, Rajasthan 302019, India
+              </h2>
+            </div>
+
+            <a
+              href="https://maps.app.goo.gl/AZCXxEaSebUj2i3i6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-sm font-medium underline underline-offset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3>See location →</h3>
+            </a>
+          </div>
+        </div>
         <div
-          className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8 border-t border-[rgba(241,236,220,0.12)]"
-        >
+          className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8 border-t border-[rgba(241,236,220,0.12)]">
           <div 
           className="text-center sm:text-left opacity-80 max-sm:order-3">
-            <h1>Copyright © 2023 Slab! Design Studio</h1>
+            <h1>225_West@gmail.com</h1>
           </div>
 
           <div className="flex justify-center">
@@ -131,12 +160,12 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex justify-center md:justify-end gap-6 text-sm">
-            <a href="#" className="underline-slide underline-white">
+            <Link href="/terms" className="underline-slide underline-white">
               <h1>TERMS</h1>
-            </a>
-            <a href="#" className="underline-slide underline-white">
+            </Link>
+            <Link href="/policies" className="underline-slide underline-white">
               <h1>PRIVACY POLICY</h1>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
