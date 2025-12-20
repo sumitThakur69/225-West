@@ -3,6 +3,7 @@ import { MdClose } from "react-icons/md";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { LuLeaf } from "react-icons/lu";
 import BookButton from "@/ui-kit/bookButton";
+import { slugify } from "@/utils/slugify";
 import Link from "next/link";
 
 interface ResponsiveMenuProps {
@@ -112,8 +113,13 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
             <h3 className="underline-slide underline-black mb-3 md:mb-4 font-semibold">Solutions</h3>
             <ul className="space-y-2">
               {solutions.map((sol) => (
-                <li className="underline-slide underline-black cursor-pointer" key={sol}>
-                  {sol}
+                <li key={sol}>
+                  <Link
+                    href={`/workspaces#${slugify(sol)}`}
+                    className="underline-slide underline-black cursor-pointer"
+                    onClick={() => setOpen?.(false)}>
+                    {sol}
+                  </Link>
                 </li>
               ))}
             </ul>

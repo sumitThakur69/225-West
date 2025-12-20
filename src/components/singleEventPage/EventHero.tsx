@@ -16,28 +16,6 @@ interface SocialIcon {
 }
 
 const EventHero: React.FC<EventDetailProps> = ({ event }) => {
-// const shareLinks: SocialIcon[] = [
-//   {
-//     name: "Facebook",
-//     icon: FaFacebook,
-//     getShareUrl: (url) =>
-//       `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-//     color: "#1877F2",
-//   },
-//   {
-//     name: "Twitter",
-//     icon: FaTwitter,
-//     getShareUrl: (url, title) =>
-//       `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-//     color: "#1DA1F2",
-//   },
-//   {
-//     name: "Instagram",
-//     icon: FaInstagram,
-//     getShareUrl: () => "#",
-//     color: "#E4405F",
-//   },
-// ];
 
 const getCurrentUrl = () => {
   if (typeof window === "undefined") return "";
@@ -76,20 +54,6 @@ const handleShare = (item: SocialIcon) => {
             {event.overviewTitle}
           </h1>
 
-          {/* Share */}
-          {/* <div className="flex flex-col items-start justify-between gap-3 sm:gap-4 max-md:hidden">
-            <div className="text-sm sm:text-base text-(--west-bg-secondary) font-light">Share on</div>
-                <div className="flex flex-row space-x-4">
-                    {shareLinks.map((item:SocialIcon , i:number)=> (
-                        <button key={i} 
-                        onClick={()=>handleShare(item)}>
-                        className="icon-circle icon-circle-dark"
-                        aria-label={`Share on ${item.name}`}
-                        <item.icon className="text-2xl" />    
-                        </button>
-                    ))}
-                </div>
-          </div> */}
           <div className="max-md:hidden">
             <ShareButtons
                 title={event.overviewTitle}

@@ -1,6 +1,6 @@
 "use client";
 
-import { smoothScroll } from "@/utlis/smoothScroll";
+import { smoothScroll } from "@/utils/smoothScroll";
 
 export default function BackToTopButton() {
   return (

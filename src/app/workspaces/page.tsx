@@ -1,12 +1,14 @@
 import WorkCards from '@/components/workPage/WorkCards'
 import { solutionsList } from '@/constants/solutionList'
 import ContactUs from '@/components/ContactUs'
-import React from 'react'
+import { slugify } from "@/utils/slugify";
+import ScrollToHash from "@/components/common/ScrollToHash";
 import WorkAmenities from '@/components/workPage/WorkAmenities'
 
 const page = () => {
   return (
     <>
+      <ScrollToHash />
       <div className="container py-8">
 
         <div className="mt-16 md:relative min-h-[260px] md:min-h-[300px] lg:min-h-[380px]">
@@ -27,7 +29,12 @@ const page = () => {
 
         <div>
           {solutionsList.map((solution) => (
-            <WorkCards key={solution.id} solution={solution} />
+            <section
+              key={solution.id}
+              id={slugify(solution.title)}
+              className="scroll-mt-14">
+              <WorkCards solution={solution} />
+            </section>
           ))}
         </div>
 

@@ -128,7 +128,7 @@ const Carousel: React.FC = () => {
           <CarouselButton onClick={handleNext} direction="next" />
         </div>
 
-        <NavigateButton text="VIEW MORE PHOTOS" href="/photos" />
+        <NavigateButton text="VIEW MORE PHOTOS" href="/gallery" />
       </div>
     </div>
   );

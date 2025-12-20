@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaPlay , FaPause } from "react-icons/fa";
-import { smoothScroll } from "@/utlis/smoothScroll";
+import { smoothScroll } from "@/utils/smoothScroll";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);

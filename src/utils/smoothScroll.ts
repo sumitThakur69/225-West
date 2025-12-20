@@ -3,7 +3,7 @@ type ScrollTarget = "top" | string;
 export function smoothScroll(
   target: ScrollTarget,
   duration: number = 1000,
-  offset: number = 0 // 👈 ADD OFFSET
+  offset: number = 0 
 ) {
   const startY = window.scrollY;
 

@@ -8,13 +8,13 @@ interface SolutionDetailProps {
 
 const WorkCards: React.FC<SolutionDetailProps> = ({ solution }) => {
   return (
-    <div className="py-8">
+    <div 
+    className="py-8">
       <div className="max-w-8xl mx-auto">
         <div className="
           grid grid-cols-1 lg:grid-cols-2 gap-4 
-          items-start 
-        ">
-          
+          items-start ">
+  
           <div className="w-full flex justify-start">
             <div className="relative rounded-3xl w-full h-[420px] md:h-[520px] lg:h-[580px] lg:max-w-[500px] overflow-hidden">
               <Image
