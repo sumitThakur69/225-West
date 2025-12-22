@@ -1,4 +1,4 @@
-import React from 'react';
+export const revalidate = 604800;
 
 const TermsPage = () => {
   return (

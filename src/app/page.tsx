@@ -1,3 +1,5 @@
+export const revalidate = 86400;
+
 import Amenities from '@/components/Amenities'
 import Hero from '@/components/Hero'
 import OurStories from '@/components/OurStories'
