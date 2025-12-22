@@ -1,6 +1,6 @@
 export function smoothScroll(
   target: string | "top",
-  duration = 500,
+  duration = 600,
   offset = 0
 ) {
   const start = window.pageYOffset;
@@ -13,13 +13,20 @@ export function smoothScroll(
 
   const startTime = performance.now();
 
+  function easeInOutCubic(t: number) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
   function animate(time: number) {
     const elapsed = time - startTime;
-    const progress = Math.min(elapsed / duration, 1);
+    const rawProgress = Math.min(elapsed / duration, 1);
+    const eased = easeInOutCubic(rawProgress);
 
-    window.scrollTo(0, start + (end - start) * progress);
+    window.scrollTo(0, start + (end - start) * eased);
 
-    if (progress < 1) requestAnimationFrame(animate);
+    if (rawProgress < 1) requestAnimationFrame(animate);
   }
 
   requestAnimationFrame(animate);

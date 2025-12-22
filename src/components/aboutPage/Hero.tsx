@@ -31,7 +31,7 @@ const Hero = () => {
           </h1>
 
           <button 
-          onClick={()=>smoothScroll("stories",1000,30)}
+          onClick={()=>smoothScroll("stories",650,30)}
           className="flex md:justify-center items-end text-md cursor-pointer">
             EXPLORE
             <MdKeyboardArrowDown className="w-5 h-5 text-(--west-bg-secondary) animate-bounce" />
