@@ -1,8 +1,8 @@
-import React from "react";
 import Link from "next/link";
 import CircleBtn from "@/ui-kit/CircleBtn";
 import { solutionsList , getImage } from "../constants/solutionList";
 import BackgroundLogo from "./BackgroundLogo";
+import { slugify } from "@/utils/slugify";
 
 const Solutions = () => {
 
@@ -19,7 +19,7 @@ const Solutions = () => {
         {solutionsList.map((item) => {
           const imgsrc = getImage(item.imgName);
           return (
-            <Link href="/workspaces" key={item.id} className="group flex-1 transition-all duration-700 md:hover:flex-[1.6] min-w-[350px]">
+            <Link href={`/workspaces#${slugify(item.title)}`} key={item.id} className="group flex-1 transition-all duration-700 md:hover:flex-[1.6] min-w-[350px]">
               <div className="relative overflow-hidden rounded-3xl h-80 md:h-[420px] transition-all duration-700">
                 <img
                   src={imgsrc}
