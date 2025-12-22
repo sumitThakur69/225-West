@@ -1,3 +1,5 @@
+export const revalidate = 300;
+
 import { getUpcomingEvents , getFeaturedEvent , getEvents } from "@/sanity/lib/getEvents" 
 import MainEventsClient from "@/components/eventPage/MainEvents";
 import { Event } from "@/types/event";

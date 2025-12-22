@@ -40,7 +40,7 @@ const Navbar = () => {
           {/* LOGO → HOME */}
           <Link
             href="/"
-            className="flex items-center gap-3 text-3xl cursor-pointer select-none"
+            className="flex items-center gap-3 text-3xl cursor-pointer md:ml-16 select-none"
           >
             <LuLeaf />
             <p>225 West</p>

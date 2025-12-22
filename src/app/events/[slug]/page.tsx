@@ -1,3 +1,6 @@
+export const revalidate = 300;
+
+
 import { getEvent } from "@/sanity/lib/getEvents";
 import { client } from "@/sanity/lib/sanity.client";
 import { relatedEventsQuery } from "@/sanity/lib/queries";

@@ -1,3 +1,5 @@
+export const revalidate = 86400
+
 import WorkCards from '@/components/workPage/WorkCards'
 import { solutionsList } from '@/constants/solutionList'
 import ContactUs from '@/components/ContactUs'
