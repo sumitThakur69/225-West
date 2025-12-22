@@ -13,13 +13,15 @@ interface SocialIcon {
 }
 
 const Footer: React.FC = () => {
-  const locations: string[] = [
-    "TSH KRATON",
-    "TSH TAMBAKWOYO",
-    "TSH GEDEAN",
-    "TSH BANTOOL",
-    "TSH PROGO",
-    "TSH JACKALL",
+  const Contact: string[] = [
+    // "TSH KRATON",
+    // "TSH TAMBAKWOYO",
+    // "TSH GEDEAN",
+    // "TSH BANTOOL",
+    // "TSH PROGO",
+    // "TSH JACKALL",
+    "+91 98765 43210",
+    "225_West@gmail.com"
   ];
 
   const solutions: string[] = [
@@ -73,13 +75,13 @@ const Footer: React.FC = () => {
           </div>
 
           {/*  Solutions / The Seed Hub */}
-          <div className="flex flex-col md:flex-row gap-6 md:gap-16 py-8">
-            {/* <div className="tracking-wider">
+          <div className="flex flex-col md:flex-row gap-6 py-8">
+            <div className="tracking-wider">
               <h1 className="underline-slide opacity-60 text-lg mb-4 tracking-wide">
-                LOCATION
+                GET IN TOUCH
               </h1>
               <ul className="space-y-3">
-                {locations.map((location, index) => (
+                {Contact.map((location, index) => (
                   <li key={index}>
                     <span  className="underline-slide underline-white cursor-pointer">
                       {location}
@@ -87,7 +89,7 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div> */}
+            </div>
 
             <div className="tracking-wider">
               <h1 className="text-lg mb-4 opacity-60">SOLUTIONS</h1>
@@ -103,14 +105,15 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
             </div>
-
-            <div className="w-fit  tracking-wider">
-              <h1 className="mb-4  opacity-60">225 West</h1>
+            <div className="tracking-wider">
+              <h1 className="text-lg mb-4 opacity-60 ">
+                225West
+              </h1>
               <ul className="space-y-3">
                 {west.map((item, index) => (
                   <li key={index}>
-                    <Link 
-                      href={item.href} 
+                    <Link
+                      href={item.href}
                       className="underline-slide underline-white">
                       {item.label}
                     </Link>
@@ -127,28 +130,27 @@ const Footer: React.FC = () => {
           </h1>
 
           <div className="group text-(--west-bg)/80">
-            <div className="flex items-start">
-      
-              <span className="flex items-end justify-center w-5 h-5 shrink-0">
-                <MdOutlineShareLocation className="w-4 h-4" />
-              </span>
-
-              <h2 className="m-0 text-sm md:text-md leading-relaxed max-w-[550px]">
-                225, Vardhman Nagar-A Patrakar Colony, Gopalpura Bypass, near 200 Feet Bypass,
+          <div>
+            <h2 className="text-sm md:text-md leading-relaxed max-w-[550px] text-(--west-bg)/80">
+              <span className="font-medium">Location :</span>{" "}
+              <span>
+                225, Vardhman Nagar-A, Patrakar Colony, Gopalpura Bypass, near 200 Feet Bypass,
                 Jaipur, Rajasthan 302019, India
-              </h2>
-            </div>
-                <a href="https://maps.app.goo.gl/AZCXxEaSebUj2i3i6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-block text-sm font-medium underline-slide underline-offset-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                  <h3>See location →</h3>
-                </a>
+              </span>
+            </h2>
+          </div>
+            <a href="https://maps.app.goo.gl/AZCXxEaSebUj2i3i6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-sm font-medium underline-slide underline-offset-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+              <h3>See location →</h3>
+            </a>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8 border-t border-[rgba(241,236,220,0.12)]">
-          <div className="text-center sm:text-left opacity-80 max-sm:order-3">
-            <h1>225_West@gmail.com</h1>
+          <div className="flex gap-2 justify-center sm:justify-start opacity-80 max-sm:order-3">
+            <span>© 2025</span>
+            <span>225 West</span>
           </div>
 
           <div className="flex justify-center">
