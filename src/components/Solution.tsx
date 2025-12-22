@@ -41,9 +41,7 @@ const Solutions = () => {
               </div>
         <div className="flex max-md:flex-row max-md:items-center max-md:justify-between md:block">
           <p
-            className="text-white/90 text-sm leading-relaxed max-w-[300px]
-            md:absolute md:transition-all md:duration-500 md:opacity-0 md:-translate-x-6 md:group-hover:opacity-100 md:group-hover:translate-x-0"
-          >
+            className="text-white/90 text-sm leading-relaxed max-w-[300px] md:absolute md:transition-all md:duration-500 md:opacity-0 md:-translate-x-6 md:group-hover:opacity-100 md:group-hover:translate-x-0">
             {item.descr}
           </p>
           <p

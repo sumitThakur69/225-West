@@ -4,7 +4,7 @@ import BackgroundLogo from "./BackgroundLogo";
 import Link from "next/link";
 import { slugify } from "@/utils/slugify";
 import BackToTopButton from "@/components/common/BackToTopButton"
-import { MdOutlineShareLocation } from "react-icons/md";
+
 
 interface SocialIcon {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -13,16 +13,10 @@ interface SocialIcon {
 }
 
 const Footer: React.FC = () => {
-  const Contact: string[] = [
-    // "TSH KRATON",
-    // "TSH TAMBAKWOYO",
-    // "TSH GEDEAN",
-    // "TSH BANTOOL",
-    // "TSH PROGO",
-    // "TSH JACKALL",
-    "+91 98765 43210",
-    "225_West@gmail.com"
-  ];
+const Contact = [
+  { type: "phone", value: "+91 98765 43210" },
+  { type: "email", value: "225_West@gmail.com" },
+];
 
   const solutions: string[] = [
     "Hot Desks",
@@ -30,7 +24,7 @@ const Footer: React.FC = () => {
     "Private Offices",
     "Virtual Offices",
     "Day Passes",
-    "Enterprice Solutions",
+    "Enterprise Solutions",
   ];
 
   const west = [
@@ -55,9 +49,9 @@ const Footer: React.FC = () => {
     logo="/brand/Logo_Footer.svg"
     >
       <div className="container py-10 md:py-14 lg:py-18">
-        {/* Top Section */}
+       
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 lg:mb-20 items-start">
-          {/* Description & Social Icons */}
+         
           <div className="lg:pr-8">
             <h1 className="mb-6 leading-relaxed max-w-[450px]">
               The Seed Hub is more than just a coworking space, it's a fertile
@@ -74,22 +68,32 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/*  Solutions / The Seed Hub */}
           <div className="flex flex-col md:flex-row gap-6 py-8">
-            <div className="tracking-wider">
-              <h1 className="underline-slide opacity-60 text-lg mb-4 tracking-wide">
-                GET IN TOUCH
-              </h1>
-              <ul className="space-y-3">
-                {Contact.map((location, index) => (
-                  <li key={index}>
-                    <span  className="underline-slide underline-white cursor-pointer">
-                      {location}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+<div className="tracking-wider">
+  <h1 className="underline-slide opacity-60 text-lg mb-4 tracking-wide">
+    GET IN TOUCH
+  </h1>
+
+  <ul className="space-y-3">
+    {Contact.map((item, index) => {
+      const href =
+        item.type === "phone"
+          ? `tel:${item.value.replace(/\s+/g, "")}`
+          : `mailto:${item.value}`;
+
+      return (
+        <li key={index}>
+          <a
+            href={href}
+            className="underline-slide underline-white cursor-pointer"
+          >
+            {item.value}
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</div>
 
             <div className="tracking-wider">
               <h1 className="text-lg mb-4 opacity-60">SOLUTIONS</h1>
