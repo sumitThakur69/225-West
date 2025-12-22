@@ -27,7 +27,7 @@ export const ContactFormEmail = ({
     </p>
 
     {eventType && (
-      <p><strong>Event Type:</strong> {eventType}</p>
+      <p><strong>Interested In:</strong> {eventType}</p>
     )}
 
     <p><strong>Message:</strong></p>

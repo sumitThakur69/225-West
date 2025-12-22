@@ -2,8 +2,8 @@
 
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import CircleBtn from "@/ui-kit/CircleBtn";
-import EventTypeDropdown from "./common/EventTypeDropdown";
-import { EVENT_MESSAGES } from "@/constants/eventTypes";
+import AreaOfInterestDropdown from "@/components/common/EventTypeDropdown";
+import { EVENT_MESSAGES, SOLUTION_MESSAGES } from "@/constants/eventTypes";
 
 interface FormData {
   firstName: string;
@@ -37,10 +37,13 @@ const NewsletterForm: React.FC = () => {
   };
 
   const handleEventTypeChange = (value: string): void => {
+    // Check if the value is in EVENT_MESSAGES or SOLUTION_MESSAGES
+    const message = EVENT_MESSAGES[value] ?? SOLUTION_MESSAGES[value] ?? "";
+    
     setFormData((prev) => ({
       ...prev,
       eventType: value,
-      message: value ? EVENT_MESSAGES[value] ?? "" : "",
+      message: message,
     }));
   };
 
@@ -97,7 +100,7 @@ const NewsletterForm: React.FC = () => {
     <section id="contact" className="py-24 bg-(--west-bg-2)">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20">
-          {/* Left */}
+
           <div className="space-y-6">
             <CircleBtn text="Contact us" />
 
@@ -111,7 +114,6 @@ const NewsletterForm: React.FC = () => {
             </p>
           </div>
 
-          {/* Right */}
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-6">
               <div>
@@ -166,11 +168,11 @@ const NewsletterForm: React.FC = () => {
               />
             </div>
 
-            <EventTypeDropdown
+            <AreaOfInterestDropdown
               value={formData.eventType}
               onChange={handleEventTypeChange}
               disabled={isSubmitting}
-              label="Event type of interest *"
+              label="Area of interest *"
               showLabel={true}
             />
 

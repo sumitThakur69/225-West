@@ -7,14 +7,15 @@ interface BookButtonProps {
   text: string;
   href: string;
   className?: string; 
+  onClick?: () => void;
 }
 
-const BookButton: React.FC<BookButtonProps> = ({ text, href, className }) => {
+const BookButton: React.FC<BookButtonProps> = ({ text, href, className , onClick}) => {
   return (
     <Link
       href='/#contact'
-      className={`btn-regular group ${className}`}
-    >
+      onClick={onClick}
+      className={`btn-regular group ${className}`}>
       <h1 className="leading-none tracking-wide">{text}</h1 > 
       <BsArrowRight className="text-(--west-bg) text-xl transition-transform duration-300 group-hover:translate-x-1 " />
     </Link>

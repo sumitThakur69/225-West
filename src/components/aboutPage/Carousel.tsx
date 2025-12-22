@@ -34,12 +34,12 @@ const MasonryGallery = () => {
         <NavigateButton
           text="VIEW MORE PHOTOS"
           className="max-md:hidden"
-          href="/photos"
+          href="/gallery"
         />
         <NavigateButton
           text="VIEW MORE"
           className="md:hidden"
-          href="/photos"
+          href="/gallery"
         />
       </div>
     </section>

@@ -11,6 +11,13 @@ interface ResponsiveMenuProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface SocialIcon {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  link: string;
+  label: string;
+}
+
+
 const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -21,7 +28,12 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
   { label: "Contact", href: "/#contact" },
 ];
 
-  const socialIcons = [FaFacebook, FaTwitter, FaInstagram, FaLinkedin];
+  const socialIcons: SocialIcon[] = [
+    { icon: FaFacebook, link: "https://facebook.com/", label: "Facebook" },
+    { icon: FaTwitter, link: "https://twitter.com/", label: "Twitter" },
+    { icon: FaInstagram, link: "https://instagram.com/", label: "Instagram" },
+    { icon: FaLinkedin, link: "https://linkedin.com/", label: "LinkedIn" },
+  ];
   const locations = ["TSH Kraton", "TSH Tambakboyo", "TSH Godean", "TSH Bantul"];
   const solutions = ["Hot Desks", "Dedicated Desks", "Private Offices", "Virtual Offices"];
 
@@ -70,7 +82,7 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
             <MdClose className="text-2xl" />
           </button>
 
-          <BookButton className="hidden md:flex py-2" text="Book a tour" href="/book-tour" />
+          <BookButton className="hidden md:flex py-2" text="Book a tour" href="/book-tour" onClick={()=>setOpen(false)} />
         </div>
 
         {/* MENU LINKS */}
@@ -88,13 +100,13 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
             ))}
           </nav>
 
-          <div className="md:flex flex-col space-y-4 md:mt-12 mt-8">
-            {socialIcons.map((Icon, i) => (
-              <div key={i} className="icon-circle icon-circle-dark">
-                <Icon className="text-2xl" />
-              </div>
-            ))}
-          </div>
+        <div className="md:flex flex-col space-y-4 md:mt-12 mt-8">
+          {socialIcons.map(({ icon: Icon, link, label }) => (
+            <a key={label} href={link} target="_blank" rel="noopener noreferrer" className="icon-circle icon-circle-dark" aria-label={label}>
+              <Icon className="text-2xl" />
+            </a>
+          ))}
+        </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 text-lg md:text-xl uppercase mt-8 md:mt-12">
@@ -127,7 +139,7 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
         </div>
 
         {/* Mobile */}
-        <BookButton className="flex md:hidden py-2 mt-4 mx-auto" text="Book a tour" href="/book-tour" />
+        <BookButton className="flex md:hidden py-2 mt-4 mx-auto" text="Book a tour" href="/book-tour" onClick={()=>setOpen(false)} />
       </div>
     </div>
   );
