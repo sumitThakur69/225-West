@@ -50,14 +50,6 @@ export const galleryItems: GalleryItem[] = [
     tags: ['Outdoor', 'Views', 'Fresh Air']
   },
   {
-    title: 'Reading Nook',
-    category: 'Quiet Zones',
-    image: '/assets/images/gallery/reading-nook.jpg',
-    height: 440,
-    description: 'A curated collection of books and comfortable seating creates an intellectual haven. Perfect for research, reading, or quiet contemplation.',
-    tags: ['Quiet', 'Books', 'Inspiration']
-  },
-  {
     title: 'Welcome Desk',
     category: 'Reception',
     image: '/assets/images/gallery/welcome-desk.jpg',

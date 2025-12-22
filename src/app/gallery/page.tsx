@@ -20,9 +20,20 @@ export default function GalleryPage() {
           </p>
         </header>
 
-        <div className="w-full h-px bg-[#c3b6a7] mb-8"></div>
+        <div className="w-full h-px bg-[#c3b6a7] mb-8" />
 
-        <div className="gallery-grid">
+        {/* ✅ BENTO GRID */}
+        <div
+          className="
+            grid
+            grid-cols-2
+            md:grid-cols-4
+            auto-rows-[160px]
+            sm:auto-rows-[180px]
+            md:auto-rows-[200px]
+            gap-4
+          "
+        >
           {galleryItems.map((item, idx) => (
             <GalleryItem
               key={item.title}
