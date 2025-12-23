@@ -58,7 +58,7 @@ const videoRef = useRef<HTMLVideoElement>(null);
             Escape the ordinary and work the extraordinary
             </h1>
 
-            <NavigateButton text="Explore our locations" href="/" />
+            <NavigateButton text="Explore our locations" href="https://maps.app.goo.gl/AZCXxEaSebUj2i3i6" />
         </div>
         </div>
         </div>

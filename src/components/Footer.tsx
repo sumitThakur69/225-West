@@ -48,7 +48,7 @@ const Contact = [
     size="50"
     logo="/brand/Logo_Footer.svg"
     >
-      <div className="container py-10 md:py-14 lg:py-18">
+      <div id="site-footer" className="container py-10 md:py-14 lg:py-18">
        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 lg:mb-20 items-start">
          
@@ -69,31 +69,29 @@ const Contact = [
           </div>
 
           <div className="flex flex-col md:flex-row gap-6 py-8">
-<div className="tracking-wider">
-  <h1 className="underline-slide opacity-60 text-lg mb-4 tracking-wide">
-    GET IN TOUCH
-  </h1>
+          <div className="tracking-wider">
+            <h1 className="underline-slide opacity-60 text-lg mb-4 tracking-wide">
+              GET IN TOUCH
+            </h1>
+            <ul className="space-y-3">
+              {Contact.map((item, index) => {
+                const href =
+                  item.type === "phone"
+                    ? `tel:${item.value.replace(/\s+/g, "")}`
+                    : `mailto:${item.value}`;
 
-  <ul className="space-y-3">
-    {Contact.map((item, index) => {
-      const href =
-        item.type === "phone"
-          ? `tel:${item.value.replace(/\s+/g, "")}`
-          : `mailto:${item.value}`;
-
-      return (
-        <li key={index}>
-          <a
-            href={href}
-            className="underline-slide underline-white cursor-pointer"
-          >
-            {item.value}
-          </a>
-        </li>
-      );
-    })}
-  </ul>
-</div>
+                return (
+                  <li key={index}>
+                    <a
+                      href={href}
+                      className="underline-slide underline-white cursor-pointer">
+                      {item.value}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
             <div className="tracking-wider">
               <h1 className="text-lg mb-4 opacity-60">SOLUTIONS</h1>

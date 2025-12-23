@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTopFloating from "@/components/common/TopFloating";
 
 const clashDisplay = localFont({
   src: [
@@ -30,7 +31,8 @@ export default function RootLayout({
       >
         <header><Navbar /></header>
         <main id="main-content">{children}</main>
-        <footer><Footer /></footer>
+        <footer id="site-footer"><Footer /></footer>
+        <BackToTopFloating />
       </body>
     </html>
   );

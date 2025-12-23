@@ -1,48 +1,25 @@
 import React, { useRef } from "react";
 import { MdClose } from "react-icons/md";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { LuLeaf } from "react-icons/lu";
 import BookButton from "@/ui-kit/bookButton";
 import { slugify } from "@/utils/slugify";
 import Link from "next/link";
+import { menuLinks, socialIcons, locations, solutions } from "@/constants/menuConstants";
 
 interface ResponsiveMenuProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface SocialIcon {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  link: string;
-  label: string;
-}
-
 
 const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-
- const menuLinks = [
-  { label: "Our Story", href: "/about" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Events", href: "/events" },
-  { label: "Contact", href: "/#contact" },
-];
-
-  const socialIcons: SocialIcon[] = [
-    { icon: FaFacebook, link: "https://facebook.com/", label: "Facebook" },
-    { icon: FaTwitter, link: "https://twitter.com/", label: "Twitter" },
-    { icon: FaInstagram, link: "https://instagram.com/", label: "Instagram" },
-    { icon: FaLinkedin, link: "https://linkedin.com/", label: "LinkedIn" },
-  ];
-  const locations = ["TSH Kraton", "TSH Tambakboyo", "TSH Godean", "TSH Bantul"];
-  const solutions = ["Hot Desks", "Dedicated Desks", "Private Offices", "Virtual Offices"];
 
   return (
     <div
       className={`fixed top-0 left-0 w-full h-full bg-(--west-bg) flex transition-all duration-300 z-50 ${
         open ? "translate-x-0" : "-translate-x-full"
-      }`}
-    >
+      }`}>
       {/* LEFT SIDE */}
       <div className="w-1/2 relative max-md:hidden">
         <button
@@ -109,16 +86,35 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
         </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 text-lg md:text-xl uppercase mt-8 md:mt-12">
-          <div>
-            <h3 className="underline-slide underline-black mb-3 md:mb-4 font-semibold">Location</h3>
-            <ul className="space-y-2">
-              {locations.map((loc) => (
-                <li className="underline-slide underline-black cursor-pointer" key={loc}>
-                  {loc}
-                </li>
-              ))}
-            </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 text-lg md:text-xl mt-8 md:mt-12">
+        <div>
+         <h3 className="underline-slide underline-black mb-3 md:mb-4 font-semibold">
+          Get In Touch
+         </h3>
+          <ul className="space-y-2">
+            {locations.map((item) => (
+              <li key={item.text}>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 underline-slide underline-black cursor-pointer">
+                    <span className="text-lg"><item.icon /></span>
+                    <span>{item.text}</span>
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-3 underline-slide underline-black cursor-pointer"
+                    onClick={() => setOpen?.(false)}>
+                    <span className="text-lg"><item.icon /></span>
+                    <span>{item.text}</span>
+                  </Link>
+                )}
+             </li>
+            ))}
+          </ul>
           </div>
 
           <div>
