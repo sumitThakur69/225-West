@@ -63,8 +63,7 @@ export default function EventTypeFilter({
                   <SelectItem
                     key={type.value}
                     value={type.value}
-                    className="cursor-pointer text-teal-900 hover:bg-teal-100 data-[state=checked]:bg-teal-200"
-                  >
+                    className="cursor-pointer text-teal-900 hover:bg-teal-100 data-[state=checked]:bg-teal-200">
                     {type.label}
                   </SelectItem>
                 ))}

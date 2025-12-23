@@ -68,7 +68,7 @@ export default function MainEventsClient({
         isSearching={isSearching}
       />
 
-      {/* Show featured event only when no filter/search is applied */}
+      {/* Show featured event jab when no filter/search is applied */}
       {!selectedEventType && !debouncedSearch && hasFeaturedEvent && (
         <FeaturedEventCard event={initialFeaturedEvent} />
       )}

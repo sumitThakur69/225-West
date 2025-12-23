@@ -1,6 +1,5 @@
 import React from "react";
 import { Event } from "@/types/event";
-import { FaFacebook, FaTwitter, FaInstagram , FaLinkedin} from "react-icons/fa";
 import BookButton from "@/ui-kit/bookButton"; 
 import ShareButtons from "./ShareButton";
 

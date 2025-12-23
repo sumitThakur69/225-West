@@ -5,7 +5,8 @@ import NavigateButton from "@/ui-kit/NavigateButton";
 
 const GalleryImage = ({ img, height }: { img: any; height: string }) => (
   <div
-    className={`relative flex-1 overflow-hidden rounded-3xl transition-all duration-700 ease-out hover:flex-[1.6] md:hover:flex-[1.6] ${height}`}>
+    className={`relative flex-1 overflow-hidden rounded-3xl transition-all duration-700 ease-out hover:flex-[1.6] md:hover:flex-[1.6] ${height}`}
+  >
     <img
       src={img.url}
       alt={img.alt}
@@ -26,11 +27,11 @@ const GalleryRow = ({ images, height }: { images: any[]; height: string }) => (
 
 const BentoGallery = () => {
   const images = carouselImages.slice(0, 8);
-  
+
   const rows = [
     { start: 0, end: 3, height: "h-[200px] sm:h-[260px] md:h-[320px]" },
     { start: 3, end: 6, height: "h-[180px] sm:h-[220px] md:h-[260px]" },
-    { start: 6, end: 8, height: "h-[190px] sm:h-[240px] md:h-[300px]" }
+    { start: 6, end: 8, height: "h-[190px] sm:h-[240px] md:h-[300px]" },
   ];
 
   return (
@@ -44,7 +45,7 @@ const BentoGallery = () => {
           />
         ))}
       </div>
-      
+
       <div className="container mt-12 flex justify-end">
         <NavigateButton
           text="VIEW MORE PHOTOS"

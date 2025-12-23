@@ -6,8 +6,7 @@ export default function BackToTopButton() {
   return (
     <button
       onClick={() => smoothScroll("top", 650)}
-      className="text-sm underline-slide underline-white"
-    >
+      className="text-sm underline-slide underline-white">
       BACK TO TOP
     </button>
   );

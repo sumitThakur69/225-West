@@ -34,16 +34,14 @@ const Story = () => {
         {stats.map((item, index) => (
         <div
           key={index}
-          className=" flex flex-row items-center gap-4 sm:gap-10
-            border-b border-(--west-bg-secondary)/40 py-4 sm:py-6">
+          className=" flex flex-row items-center gap-4 sm:gap-10 border-b border-(--west-bg-secondary)/40 py-4 sm:py-6">
           <span
             className="text-4xl sm:text-5xl md:text-6xl font-light text-(--west-bg-secondary) text-left sm:text-right  sm:min-w-[140px]">
             {item.value}
           </span>
 
           <h1
-            className="text-base sm:text-lg md:text-xl 
-              text-(--west-bg-secondary)/70">
+            className="text-base sm:text-lg md:text-xl text-(--west-bg-secondary)/70">
             {item.label}
           </h1>
         </div>

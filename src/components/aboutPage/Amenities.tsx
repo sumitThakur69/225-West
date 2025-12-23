@@ -22,13 +22,9 @@ const videoRef = useRef<HTMLVideoElement>(null);
                 AboutAmenityList.map((item)=> (
                     <div key={item.id} className="space-y-4">
                         <img src={getAmenityIcon(item.iconName)} 
-                        className="transition-transform duration-300 ease-out    hover:-translate-y-1 hover:scale-110"
+                        className="transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-110"
                         alt="" />
-                        <h1 className="text-lg sm:text-xl md:text-2xl
-                            text-(--west-bg)
-                            wrap-break-words
-                            leading-snug
-                            max-w-full">
+                        <h1 className="text-lg sm:text-xl md:text-2xl text-(--west-bg wrap-break-words leading-snug max-w-full">
                             {item.title}
                         </h1>
                       <h1 className="text-lg leading-relaxed text-(--west-bg)/80">

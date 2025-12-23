@@ -22,12 +22,10 @@ export default function GalleryModal({ item, onClose }: Props) {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-md p-4"
-    >
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-md p-4">
       <div
         onClick={(e) => e.stopPropagation()}
-        className="
-          relative w-full max-w-6xl max-h-[90vh] bg-(--west-bg) rounded-xl overflow-hidden flex flex-col md:flex-row">
+        className="relative w-full max-w-6xl max-h-[90vh] bg-(--west-bg) rounded-xl overflow-hidden flex flex-col md:flex-row">
         <button
           onClick={onClose}
           aria-label="Close modal"
@@ -62,8 +60,7 @@ export default function GalleryModal({ item, onClose }: Props) {
             {item.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 text-xs rounded-full bg-(--west-bg-secondary)/10 text-(--west-bg-secondary)"
-              >
+                className="px-3 py-1 text-xs rounded-full bg-(--west-bg-secondary)/10 text-(--west-bg-secondary)">
                 {tag}
               </span>
             ))}
