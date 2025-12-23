@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { smoothScroll } from "@/utils/smoothScroll";
 import { FiArrowUp } from "react-icons/fi";
 
-export default function BackToTopFloating() {
+export default function BackToTopFloating({menuOpen}: {menuOpen: boolean}) {
   const [scrolled, setScrolled] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
 
@@ -32,7 +32,7 @@ export default function BackToTopFloating() {
     return () => observer.disconnect();
   }, []);
 
-  const visible = scrolled && !footerVisible;
+  const visible = scrolled && !footerVisible && !menuOpen;
 
   if (!visible) return null;
 

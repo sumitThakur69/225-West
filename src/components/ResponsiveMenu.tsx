@@ -17,6 +17,7 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
 
   return (
     <div
+      id="side-menu"
       className={`fixed top-0 left-0 w-full h-full bg-(--west-bg) flex transition-all duration-300 z-50 ${
         open ? "translate-x-0" : "-translate-x-full"
       }`}>

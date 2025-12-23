@@ -68,7 +68,7 @@ const Contact = [
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 py-8">
+          <div className="flex flex-col md:flex-row justify-between gap-6 py-8">
           <div className="tracking-wider">
             <h1 className="underline-slide opacity-60 text-lg mb-4 tracking-wide">
               GET IN TOUCH
@@ -79,7 +79,6 @@ const Contact = [
                   item.type === "phone"
                     ? `tel:${item.value.replace(/\s+/g, "")}`
                     : `mailto:${item.value}`;
-
                 return (
                   <li key={index}>
                     <a
