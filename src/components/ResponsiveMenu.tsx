@@ -89,9 +89,9 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 text-lg md:text-xl mt-8 md:mt-12">
         <div>
-         <h3 className="underline-slide underline-black mb-3 md:mb-4 font-semibold">
+         <h1 className="underline-slide underline-black mb-3 md:mb-4 font-semibold">
           Get In Touch
-         </h3>
+         </h1>
           <ul className="space-y-2">
             {locations.map((item) => (
               <li key={item.text}>
@@ -119,7 +119,7 @@ const ResponsiveMenu = ({ open, setOpen }: ResponsiveMenuProps) => {
           </div>
 
           <div>
-            <h3 className="underline-slide underline-black mb-3 md:mb-4 font-semibold">Solutions</h3>
+            <h1 className="underline-slide underline-black mb-3 md:mb-4 font-semibold">Solutions</h1>
             <ul className="space-y-2">
               {solutions.map((sol) => (
                 <li key={sol}>
