@@ -12,26 +12,6 @@ import React from "react";
 export default function Page() {
   return (
     <>
-      {/* Google Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CoworkingSpace",
-            name: "225 West",
-            description:
-              "Premium coworking space in Jaipur offering shared offices, private cabins, meeting rooms and event spaces.",
-            url: "https://225-west.vercel.app",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Jaipur",
-              addressCountry: "IN",
-            },
-          }),
-        }}
-      />
-
       <main>
         <Hero />
         <OurStories />
