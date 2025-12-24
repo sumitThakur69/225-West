@@ -1,26 +1,26 @@
 export const revalidate = 86400;
 
-import Amenities from "@/components/Amenities";
-import Hero from "@/components/Hero";
-import OurStories from "@/components/OurStories";
-import Solutions from "@/components/Solution";
-import ContactUs from "@/components/ContactUs";
-import Carousel from "@/components/Carousel";
-import Events from "@/components/Events";
-import React from "react";
+import Amenities from '@/components/Amenities'
+import Hero from '@/components/Hero'
+import OurStories from '@/components/OurStories'
+import Solutions from '@/components/Solution'
+import ContactUs from '@/components/ContactUs'
+import Carousel from '@/components/Carousel'
+import Events from '@/components/Events'
+import React from 'react'
 
-export default function Page() {
+const page = () => {
   return (
-    <>
-      <main>
-        <Hero />
-        <OurStories />
-        <Carousel />
-        <Amenities />
-        <Solutions />
-        <Events />
-        <ContactUs />
-      </main>
-    </>
-  );
+    <div>
+      <Hero />
+      <OurStories />
+      <Carousel />
+      <Amenities />
+      <Solutions />
+      <Events/>
+      <ContactUs />
+    </div>
+  )
 }
+
+export default page

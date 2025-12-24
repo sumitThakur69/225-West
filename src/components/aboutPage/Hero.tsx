@@ -33,8 +33,7 @@ const Hero = () => {
 
           <button
             onClick={() => smoothScroll("stories", 650, 30)}
-            className="flex md:justify-center items-end text-md cursor-pointer"
-          >
+            className="flex md:justify-center items-end text-md cursor-pointer">
             EXPLORE
             <MdKeyboardArrowDown className="w-5 h-5 text-(--west-bg-secondary) animate-bounce" />
           </button>
@@ -54,12 +53,9 @@ const Hero = () => {
           <button
             onClick={togglePlay}
             aria-label={isPlaying ? "Pause video" : "Play video"}
-            className="absolute inset-0 flex items-end justify-end mr-8 mb-8"
-          >
+            className="absolute inset-0 flex items-end justify-end mr-8 mb-8">
             <div
-              className="
-            flex items-center justify-center rounded-full border-2 border-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
-            >
+              className="flex items-center justify-center rounded-full border-2 border-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
               {isPlaying ? (
                 <FaPause className="text-white text-lg sm:text-xl md:text-2xl" />
               ) : (

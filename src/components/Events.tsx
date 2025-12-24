@@ -36,6 +36,7 @@ const events = await getEvents(null , null)
                   src={item.imageUrl}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="w-full h-full object-cover shadow-2xl transition-all duration-400 ease-in-out group-hover:opacity-70"
                 />
 

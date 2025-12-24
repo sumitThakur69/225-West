@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import EventsSection from "@/ui-kit/events/EventsSection";
 import { Event } from "@/types/event";
 import { getPastEvents } from "@/sanity/lib/getEvents";
@@ -12,9 +12,9 @@ export default function PastEventsSection() {
   const [hasMore, setHasMore] = useState(true);
 
   // Load initial events
-  useState(() => {
+ useEffect(() => {
     loadEvents(6);
-  });
+  }, []);
 
   async function loadEvents(newLimit: number) {
     setIsLoading(true);
