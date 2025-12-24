@@ -87,7 +87,7 @@ const Carousel: React.FC = () => {
 
   const getStyle = (pos: number): string => {
     const base =
-      "absolute top-1/2 -translate-y-1/2 transition-all duration-500 ease-out";
+      "absolute top-1/2 -translate-y-1/2 transition-[left,right,scale] duration-500 ease-out";
 
     const styles: Record<number, string> = {
       0: `${base} left-1/2 -translate-x-1/2 scale-100 z-30 w-[260px] h-[440px] lg:w-[370px] lg:h-[640px]`,

@@ -65,21 +65,34 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <head>
+      <link
+        rel="preload"
+        as="image"
+        href="/_next/image?url=%2Fassets%2Fposters%2FHero.png&w=1200&q=75"
+        fetchPriority="high"
+      />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "CoworkingSpace",
-              name: "225 West",
+              "@id": "https://225-west.vercel.app/#coworking",
+              name: "225 West Coworking Space",
+              url: "https://225-west.vercel.app",
+              image: "https://225-west.vercel.app/og-image.jpg",
               description:
                 "225 West is Jaipur’s premium coworking space providing flexible workspaces, private offices, meeting rooms and event areas designed for startups, freelancers and growing teams.",
-              url: "https://225-west.vercel.app",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Jaipur",
+                addressRegion: "Rajasthan",
                 addressCountry: "IN",
               },
+              areaServed: {
+                "@type": "City",
+                name: "Jaipur",
+              }
             }),
           }}
         />

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FiPhone, FiMail } from "react-icons/fi";
 import BackgroundLogo from "./BackgroundLogo";
 import Link from "next/link";
 import { slugify } from "@/utils/slugify";
@@ -79,12 +80,14 @@ const Contact = [
                   item.type === "phone"
                     ? `tel:${item.value.replace(/\s+/g, "")}`
                     : `mailto:${item.value}`;
+                const Icon = item.type === "phone" ? FiPhone : FiMail;
                 return (
                   <li key={index}>
                     <a
                       href={href}
-                      className="underline-slide underline-white cursor-pointer">
-                      {item.value}
+                      className="flex items-center gap-3 underline-slide underline-white cursor-pointer">
+                      <span className="text-lg"><Icon /></span>
+                      <span>{item.value}</span>
                     </a>
                   </li>
                 );
