@@ -19,17 +19,14 @@ const Hero = () => {
         <Image
           src="/assets/posters/Hero.png"
           alt="The Seed Hub workspace"
-          fill
-          priority   
-          loading="eager"
-          fetchPriority="high"        
-          sizes="100vw"
+          fill   
+          loading="eager"       
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover object-top"
         />
 
         <div className="absolute inset-0 bg-bottom-overlay"></div>
       </div>
-
     </div>
   );
 };

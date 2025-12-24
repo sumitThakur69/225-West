@@ -11,7 +11,7 @@ export default function GalleryPage() {
   return (
     <>
       <div className="container mx-auto px-4 md:px-10 lg:px-16 py-16">
-        <header className="text-center mb-8 md:mb-12 animate-fade-in">
+        <header className="text-center mb-8 md:mb-12 animate-fade-in pt-8">
           <h1 className="text-5xl md:text-7xl lg:text-9xl font-medium tracking-tight text-[#1F473E] mb-3">
             Our Space
           </h1>

@@ -65,12 +65,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <head>
-      <link
-        rel="preload"
-        as="image"
-        href="/_next/image?url=%2Fassets%2Fposters%2FHero.png&w=1200&q=75"
-        fetchPriority="high"
-      />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

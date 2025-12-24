@@ -33,7 +33,7 @@ export default function GalleryModal({ item, onClose }: Props) {
         <MdClose className="text-2xl" />
         </button>
 
-        <div className="relative w-full md:w-2/3 min-h-[280px]">
+        <div className="relative w-full md:w-2/3 h-60 min-h-[540px]">
           <Image
             src={item.image}
             alt={item.title}
