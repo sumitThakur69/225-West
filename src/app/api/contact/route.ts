@@ -14,11 +14,11 @@ const sanity = createClient({
 
 const rateMap = new Map<string, number>()
 
-function rateLimit(ip: string) {
+function rateLimit(email: string) {
   const now = Date.now()
-  const last = rateMap.get(ip) || 0
+  const last = rateMap.get(email) || 0
   if (now - last < 60_000) return false
-  rateMap.set(ip, now)
+  rateMap.set(email, now)
   return true
 }
 
@@ -34,18 +34,16 @@ function validate(data: any) {
 
 export async function POST(req: Request) {
   try {
-    const ip =
-      req.headers.get('x-forwarded-for') ??
-      req.headers.get('x-real-ip') ??
-      'unknown'
-
-    if (!rateLimit(ip))
-      return NextResponse.json(
-        { success: false, message: 'Too many requests. Try later.' },
-        { status: 429 }
-      )
 
     const data = await req.json()
+    
+    if(!rateLimit(data.email.toLowerCase())){
+      return NextResponse.json(
+        { success: false, message: 'Try After 1 minute' },
+        { status: 429 }
+      )
+    }
+
     const error = validate(data)
     if (error)
       return NextResponse.json({ success: false, message: error }, { status: 400 })
@@ -66,7 +64,7 @@ export async function POST(req: Request) {
     // Render email HTML
     const emailHtml = await render(ContactFormEmail(doc))
 
-    // Send email (fire-and-forget with better error logging)
+    // Send email 
     resend.emails.send({
       from: 'The Seed Hub <onboarding@resend.dev>',
       to: [process.env.ADMIN_EMAIL!],
