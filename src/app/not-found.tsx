@@ -56,19 +56,19 @@ export default function NotFound() {
         <nav className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center px-8 py-4 bg-teal-700 text-white rounded-full font-medium hover:bg-teal-800 transition-transform hover:scale-105 shadow-lg">
+            className="inline-flex items-center justify-center px-8 py-4 bg-(--west-bg-secondary) text-(--west-bg) rounded-full font-medium hover:bg-teal-800 transition-transform hover:scale-105 shadow-lg">
             Back to Home
           </Link>
 
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center px-4 py-2 bg-white text-teal-700 border-2 border-teal-700 rounded-full font-medium hover:bg-teal-50 transition-transform hover:scale-105">
+            className="inline-flex items-center justify-center px-4 py-2 bg-(--west-bg) text-(--west-bg-secondary) border-2 border-(--west-bg-secondary) rounded-full font-medium hover:bg-teal-50 transition-transform hover:scale-105">
             Contact Us
           </Link>
         </nav>
 
         {/* Quick Links */}
-        <nav className="mt-12 pt-8 border-t border-gray-200 text-sm">
+        <nav className="mt-12 pt-8 border-t border-(--west-bg-secondary) text-sm">
           <p className="text-gray-500 mb-4">Looking for something specific?</p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/workspaces" className="text-teal-700 hover:underline">Workspaces</Link>

@@ -31,13 +31,13 @@ const events = await getEvents(null , null)
               href={`/events/${item.slug}`}
               className="group space-y-8 block"
             >
-              <div className="relative overflow-hidden rounded-3xl aspect-square transition-all group-hover:rounded-full">
+              <div className="relative overflow-hidden rounded-3xl aspect-square transition-all duration-200 ease-in-out group-hover:rounded-full">
                 <Image
                   src={item.imageUrl}
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="w-full h-full object-cover shadow-2xl transition-all duration-400 ease-in-out group-hover:opacity-70"
+                  className="w-full h-full object-cover shadow-2xl transition-all duration-500 ease-in-out group-hover:opacity-70"
                 />
 
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent pointer-events-none" />
